@@ -46,8 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8" />
   <title>Cadastro de Usuário</title>
-  <link rel="stylesheet" href="cadastroU.css" />
-  <script src="cadastroU.js" defer></script>
+  <link rel="stylesheet" href="css/cadastroU.css"/>
+  <script src="js/cadastroU.js" defer></script>
 </head>
 <body>
   <h1>Cadastro de Usuário</h1>
