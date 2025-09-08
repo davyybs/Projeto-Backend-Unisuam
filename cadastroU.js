@@ -207,7 +207,7 @@ function validarFormulario(event) {
   form.submit();
 }
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form');
+  const form = document.getElementById('formCadastro');
 
   form.addEventListener('submit', validarFormulario);
 
@@ -222,5 +222,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('cpf').addEventListener('input', () => {
     document.getElementById('cpfErro').style.display = 'none';
     document.getElementById('cpf').setCustomValidity('');
+  });
+
+  document.getElementById('confirma_senha').addEventListener('input', () => {
+    const senha = document.getElementById('senha').value;
+    const confirma = document.getElementById('confirma_senha').value;
+
+    if (senha === confirma) {
+      document.getElementById('confirma_senha').setCustomValidity('');
+    }
   });
 });
