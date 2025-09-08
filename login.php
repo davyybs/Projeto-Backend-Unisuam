@@ -1,13 +1,54 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="h-100">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Login</title>
   </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <body class=" h-100">
+    <main class="d-flex h-100">
+      <section class="container d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex align-items-center justify-content-center w-75 h-75 bg-body loginArea">
+          <form action="2fa.php" method="post">
+            <div>
+              <h1 class="fw-semibold">Faça o Login!</h1>
+            </div>
+            <div class="d-flex flex-column py-4">
+              <label for="login" class="form-label fs-4">Login</label>
+              <div class="input-group mb-1">
+                <span class="input-group-text">
+                  <i class="bi bi-person-fill"></i>
+                </span>
+                <input type="text" name="login" id="login" required class="form-control">
+              </div>
+              <label for="password" class="form-label fs-4">Senha</label>
+              <div class="input-group mb-1">
+                <span class="input-group-text">
+                  <i class="bi bi-lock-fill"></i>
+                </span>
+                <input type="password" name="password" id="password" required class="form-control">
+              </div>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary fw-semibold">Enviar</button>
+              <button type="reset" class="btn btn-secondary fw-semibold">Limpar</button>
+            </div>
+            <div class="mt-3">
+              <p class="">Ainda não possui uma conta? <a href="cadastroU.php" class="text-decoration-none">Cadastre-se</a></p>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="container d-flex align-items-center justify-content-center pe-0">
+        <img src="images/Adobe Express - file.png" alt="Livraria">
+      </section>
+    </main>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
