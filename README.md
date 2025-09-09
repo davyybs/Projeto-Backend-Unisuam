@@ -8,7 +8,7 @@ Este repositório contém o código-fonte do projeto de back-end para um sistema
 
 A aplicação simula um ambiente real onde uma empresa busca digitalizar seu catálogo e gerenciar seus clientes, preparando-se para futuras campanhas de vendas. O sistema conta com diferentes níveis de acesso, garantindo que as operações sensíveis sejam restritas a usuários autorizados.
 
-===================================================================================================================================
+============================================================================================
 
 ✨ Funcionalidades Principais
 
@@ -25,8 +25,8 @@ Gerenciamento de Usuários:
 
   -Dois Níveis de Acesso:
 
-    -Usuário Comum: Pode se cadastrar, visualizar produtos e alterar a própria senha.
-    -Usuário Master (Administrador): Tem acesso a funcionalidades restritas, como consultar, pesquisar e excluir usuários comuns.
+   -Usuário Comum: Pode se cadastrar, visualizar produtos e alterar a própria senha.
+   -Usuário Master (Administrador): Tem acesso a funcionalidades restritas, como consultar, pesquisar e excluir usuários comuns.
 
   -Cadastro de Novos Usuários: Um formulário completo e intuitivo para o registro de novos clientes.
 
@@ -37,7 +37,7 @@ Painel Administrativo:
 
 Modelo do Banco de Dados: Acesso a uma visualização do Diagrama Entidade-Relacionamento (DER) para fácil compreensão da arquitetura dos dados.
 
-===================================================================================================================================
+============================================================================================
 
 🛠️ Tecnologias Utilizadas
 
@@ -47,7 +47,7 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 -Banco de Dados: MySQL
 -Front-end: HTML5, CSS3, JavaScript (com suporte para framework Bootstrap).
 
-===================================================================================================================================
+============================================================================================
 
 👨‍💻 Autores
 
