@@ -44,11 +44,9 @@
         </div>
       </section>
       <section class="container d-flex align-items-center justify-content-center pe-0">
-        <img src="images/Adobe Express - file.png" alt="Livraria" class="img-fluid">
+        <img src="images/library.png" alt="Livraria" class="img-fluid">
       </section>
     </main>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
