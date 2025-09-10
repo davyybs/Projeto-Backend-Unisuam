@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Login</title>
   </head>
-  <body class=" h-100">
+  <body class="h-100">
     <main class="d-flex h-100">
       <section class="container d-flex flex-column justify-content-center align-items-center">
         <div class="d-flex align-items-center justify-content-center w-75 h-75 bg-body shadow loginArea">
