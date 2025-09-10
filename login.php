@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR" class="h-100">
+<html lang="pt-BR" class="h-100" data-bs-theme="">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +11,7 @@
   <body class=" h-100">
     <main class="d-flex h-100">
       <section class="container d-flex flex-column justify-content-center align-items-center">
-        <div class="d-flex align-items-center justify-content-center w-75 h-75 bg-body loginArea">
+        <div class="d-flex align-items-center justify-content-center w-75 h-75 bg-body shadow loginArea">
           <form action="2fa.php" method="post">
             <div class="d-flex flex-column-reverse align-items-center gap-2">
               <h1 class="fw-semibold">Faça o Login!</h1>
@@ -43,7 +43,7 @@
           </form>
         </div>
       </section>
-      <section class="container d-flex align-items-center justify-content-center pe-0">
+      <section class="container d-none d-lg-flex align-items-center justify-content-center pe-0">
         <img src="images/library.png" alt="Livraria" class="img-fluid">
       </section>
     </main>
