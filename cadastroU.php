@@ -52,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-  <h1 class="text-center">Cadastro de Usuário</h1>
-  <div class="container d-flex flex-column justify-content-center align-items-center">
+  <h1>Cadastro de Usuário</h1>
+  <div class="container d-flex flex-column justify-content-center align-items-start">
 
 
     <form class="form w-100 p-4 bg-white" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" id="formCadastro">
@@ -190,4 +190,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
   </div>
 </body>
-</html>class="d-block"
+</html>
