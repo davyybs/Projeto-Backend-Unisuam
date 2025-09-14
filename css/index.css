@@ -5,3 +5,23 @@ body {
 .logoImg {
   width: 63px !important;
 }
+
+.input-group input {
+  width: 260px !important;
+}
+
+.searchBtn {
+  background: none !important; 
+  border: none !important;   
+  padding: 0 !important;    
+  margin: 0 !important;
+  cursor: pointer !important;
+}
+
+.emailInput {
+  width: 200px !important;
+}
+
+.logoImgFooter {
+  width: 85px !important;
+}
