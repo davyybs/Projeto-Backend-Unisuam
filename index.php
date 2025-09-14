@@ -23,12 +23,12 @@
         </ul>
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <div class="input-group">
+            <input type="search" class="form-control text-dark" placeholder="Pesquisar por..." aria-label="Search"/>
             <span class="input-group-text">
               <button type="submit" class="searchBtn">
                 <i class="bi bi-search"></i>
               </button>
             </span>
-            <input type="search" class="form-control text-dark" placeholder="Pesquisar por..." aria-label="Search"/>
           </div>
         </form>
         <div class="me-3">
@@ -47,40 +47,71 @@
       </div>
     </div>
   </header>
+
   <section class="hero">
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="..." class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+    <div class="container px-4 py-5" id="custom-cards">
+      <h2 class="pb-2 border-bottom">Custom cards</h2>
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+          <div class="col">
+            <div
+              class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+              style="background-image: url(&quot;unsplash-photo-1.jpg&quot;)"
+            >
+              <div
+                class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+              >
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                  Short title, long jacket
+                </h3>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img
+                      src="https://github.com/twbs.png"
+                      alt="Bootstrap"
+                      width="32"
+                      height="32"
+                      class="rounded-circle border border-white"
+                    />
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg
+                      class="bi me-2"
+                      width="1em"
+                      height="1em"
+                      role="img"
+                      aria-label="Location"
+                    >
+                      <use xlink:href="#geo-fill"></use>
+                    </svg>
+                    <small>Earth</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg
+                      class="bi me-2"
+                      width="1em"
+                      height="1em"
+                      role="img"
+                      aria-label="Duration"
+                    >
+                      <use xlink:href="#calendar3"></use>
+                    </svg>
+                    <small>3d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
     </div>
   </section>
 
-  <div class="d-flex bg-body">
+  <footer class="d-flex bg-body">
     <div class="container">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
         <div class="col mb-3">
           <a href="index.php" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" aria-label="Bootstrap">
             <img src="images/logoC.png" alt="Logo UniLivros" class="logoImgFooter" id="imagemTema">
           </a>
           <p class="text-body-secondary">&copy; 2025 UniLivros. Todos os direitos reservados.</p>
         </div>
-        <div class="col mb-3"></div>
         <div class="col mb-3"></div>
         <div class="col mb-3">
           <h5>Seções</h5>
@@ -103,24 +134,41 @@
           <h5>Redes Sociais</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
-              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="nav-link p-0"><i class="bi bi-instagram"> @unilivros</i></a>
             </li>
             <li class="nav-item mb-2">
-              <a href="#"><i class="bi bi-tiktok"></i></a>
+              <a href="#" class="nav-link p-0"><i class="bi bi-tiktok"> @_unilivros</i></a>
             </li>
             <li class="nav-item mb-2">
-              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#" class="nav-link p-0"><i class="bi bi-youtube"> /@unilivrosyt</i></a>
             </li>
             <li class="nav-item mb-2">
-              <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16"> <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg>
+              <a href="#" class="nav-link p-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16"> <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg> @unilivros
               </a>
             </li>
           </ul>
         </div>
-      </footer>
+        <div class="col mb-3">
+          <h5>Recursos</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">Política de Privacidade</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">Termos de Uso</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">Ajuda</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0">Fale Conosco</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="js/darkmode.js"></script>

@@ -7,7 +7,7 @@ function alternarTema() {
 
   // Atualiza ícone e imagem
   trocarIcone(novoTema === "dark");
-  trocarImagem(novoTema === "dark");
+  trocarImagens(novoTema === "dark");
 }
 
 // Função para aplicar o tema salvo quando a página carrega
@@ -17,7 +17,7 @@ function aplicarTemaSalvo() {
 
   // Atualiza ícone e imagem
   trocarIcone(temaSalvo === "dark");
-  trocarImagem(temaSalvo === "dark");
+  trocarImagens(temaSalvo === "dark");
 }
 
 // Função para trocar o ícone baseada no tema
@@ -34,18 +34,16 @@ function trocarIcone(escuro) {
   }
 }
 
-// Função para trocar a imagem baseada no tema
-function trocarImagem(escuro) {
-  const imagem = document.getElementById('imagemTema');
-  if (imagem) {
-    imagem.src = escuro ? 'images/logoWhite.png' : 'images/logoC.png';
-  }
-}
+// Função unificada para trocar as imagens baseada no tema
+function trocarImagens(escuro) {
+  const imagem1 = document.getElementById('imagemTema');
+  const imagem2 = document.getElementById('imagemTema2');
 
-function trocarImagem(escuro) {
-  const imagem = document.getElementById('imagemTema2');
-  if (imagem) {
-    imagem.src = escuro ? 'images/logoWhiteI.png' : 'images/logoI.png';
+  if (imagem1) {
+    imagem1.src = escuro ? 'images/logoWhite.png' : 'images/logoC.png';
+  }
+  if (imagem2) {
+    imagem2.src = escuro ? 'images/logoWhiteI.png' : 'images/logoI.png';
   }
 }
 
