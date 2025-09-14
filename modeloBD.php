@@ -53,7 +53,7 @@
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
         <div class="col mb-3">
           <a href="index.php" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" aria-label="Bootstrap">
-            <img src="images/logoC.png" alt="Logo UniLivros" class=" logoImgFooter">
+            <img src="images/logoC.png" alt="Logo UniLivros" class="logoImgFooter" id="imagemTema">
           </a>
           <p class="text-body-secondary">&copy; 2025 UniLivros. Todos os direitos reservados.</p>
         </div>
@@ -100,5 +100,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="js/darkmode.js"></script>
 </body>
 </html>

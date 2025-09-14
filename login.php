@@ -15,7 +15,7 @@
           <form action="2fa.php" method="post">
             <div class="d-flex flex-column-reverse align-items-center gap-2">
               <h1 class="fw-semibold">Faça o Login!</h1>
-              <a href="index.php"><img src="images/logoI.png" alt="Logo Unilivros" class="logoImg"></a>
+              <a href="index.php"><img src="images/logoI.png" alt="Logo Unilivros" class="logoImg" id="imagemTema2"></a>
             </div>
             <div class="d-flex flex-column pb-4 pt-2">
               <label for="login" class="form-label fs-4">Login</label>
@@ -49,5 +49,6 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="js/darkmode.js"></script>
   </body>
 </html>
