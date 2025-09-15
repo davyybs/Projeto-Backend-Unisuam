@@ -22,21 +22,30 @@ body {
   height: 400px;
 }
 
+.card1:hover, .card2:hover, .card3:hover {
+  transition: 0.3s ease;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 .card1 {
   background-image: url('https://cdn2.penguin.com.au/covers/original/9781779526076.jpg');
   background-size: cover;
   background-position: center;
+  transition: 0.3s ease;
 }
 
 .card2 {
   background-image: url('https://m.media-amazon.com/images/I/81iqH8dpjuL.jpg');
   background-size: cover;
   background-position: 0px -60px;
+  transition: 0.3s ease;
 }
 
 .card3 {
   background-image: url('https://m.media-amazon.com/images/I/71K-luk0zcL._UF894,1000_QL80_.jpg');
   background-size: cover;
+  transition: 0.3s ease;
 }
 
 .overlay {
