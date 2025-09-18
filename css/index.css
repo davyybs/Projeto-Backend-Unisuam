@@ -59,6 +59,10 @@ h3 {
   z-index: 2;
 }
 
+.hero a {
+  all: unset;
+}
+
 .logoImgFooter {
   width: 85px;
 }

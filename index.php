@@ -25,7 +25,7 @@
         </ul>
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <div class="input-group">
-            <input type="search" class="form-control text-dark" placeholder="Pesquisar por..." aria-label="Search"/>
+            <input type="search" class="form-control text-body" placeholder="Pesquisar por..." aria-label="Search"/>
             <span class="input-group-text">
               <button type="submit" class="searchBtn">
                 <i class="bi bi-search"></i>
@@ -56,34 +56,96 @@
         
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 cardH">
           <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg card1">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <div class="overlay"></div>
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Lançamentos</h3>
+            <a href="#lancamentos" class="link-underline-opacity-0">
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg card1">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                  <div class="overlay"></div>
+                  <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Lançamentos</h3>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg card2">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <div class="overlay"></div>
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Mais Vendidos</h3>
+            <a href="#populares" class="link-underline-opacity-0">
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg card2">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                  <div class="overlay"></div>
+                  <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Populares no momento</h3>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg card3">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                <div class="overlay"></div>
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Ofertas</h3>
+            <a href="#recomendacoes" class="link-underline-opacity-0">
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg card3">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                  <div class="overlay"></div>
+                  <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Recomendações</h3>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
-        
+        <hr>
       </div>
+  </section>
+
+  <section class="conteudo">
+    <div class="container">
+      <div class="lancamentos" id="lancamentos">
+        <div>
+          <h2 class="text-body fs-4 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Lançamentos</h2>
+        </div>
+        <div class="row">
+          <div class="col">
+        
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+
+      <div class="populares" id="populares">
+        <div>
+          <h2 class="text-body fs-4 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Populares no momento</h2>
+        </div>
+        <div class="row">
+          <div class="col">
+        
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+
+      <div class="recomendacoes" id="recomendacoes">
+        <div>
+          <h2 class="text-body fs-4 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Recomendações</h2>
+        </div>
+        <div class="row">
+          <div class="col">
+        
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- Footer -->
