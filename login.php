@@ -37,8 +37,11 @@
               <button type="submit" class="btn btn-primary fw-semibold">Enviar</button>
               <button type="reset" class="btn btn-secondary fw-semibold">Limpar</button>
             </div>
-            <div class="mt-3">
-              <p class="">Ainda não possui uma conta? <a href="cadastroU.php" class="text-decoration-none">Cadastre-se</a></p>
+            <div class="mt-2 d-flex justify-content-start">
+              <p class="mb-0">Ainda não possui uma conta? <a href="cadastroU.php" class="text-decoration-none">Cadastre-se</a></p>
+            </div>
+            <div class="mt-4 d-flex justify-content-center">
+              <a href="" class="text-decoration-none">Esqueceu a senha?</a>
             </div>
           </form>
         </div>
