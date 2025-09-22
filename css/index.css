@@ -1,27 +1,68 @@
 body {
-  background-color: #f1f5f9 !important;
+  background-color: #f1f5f9;
 }
 
 .logoImg {
-  width: 63px !important;
+  width: 63px;
 }
 
 .input-group input {
-  width: 260px !important;
+  width: 260px;
 }
 
 .searchBtn {
-  background: none !important; 
-  border: none !important;   
-  padding: 0 !important;    
-  margin: 0 !important;
-  cursor: pointer !important;
+  background: none; 
+  border: none;   
+  padding: 0;    
+  margin: 0;
+  cursor: pointer;
 }
 
-.emailInput {
-  width: 200px !important;
+.cardH {
+  height: 400px;
+}
+
+.card1:hover, .card2:hover, .card3:hover {
+  transition: 0.3s ease;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.card1 {
+  background-image: url('https://cdn2.penguin.com.au/covers/original/9781779526076.jpg');
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s ease;
+}
+
+.card2 {
+  background-image: url('https://m.media-amazon.com/images/I/81iqH8dpjuL.jpg');
+  background-size: cover;
+  background-position: 0px -60px;
+  transition: 0.3s ease;
+}
+
+.card3 {
+  background-image: url('https://m.media-amazon.com/images/I/71K-luk0zcL._UF894,1000_QL80_.jpg');
+  background-size: cover;
+  transition: 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+  z-index: 2;
+}
+
+.hero a {
+  all: unset;
 }
 
 .logoImgFooter {
-  width: 85px !important;
+  width: 85px;
 }
