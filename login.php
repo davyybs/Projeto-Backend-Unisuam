@@ -1,11 +1,15 @@
+<?php
+session_start();
+require 'conexao.php';
+?>
 <!doctype html>
 <html lang="pt-BR" class="h-100" data-bs-theme="">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/login.css">
     <title>Login</title>
   </head>
   <body class="h-100">
@@ -38,7 +42,7 @@
               <button type="reset" class="btn btn-secondary fw-semibold">Limpar</button>
             </div>
             <div class="mt-3">
-              <p class="">Ainda não possui uma conta? <a href="cadastroU.php" class="text-decoration-none">Cadastre-se</a></p>
+              <p class="">Esqueceu sua senha? <a href="esqueci.php" class="text-decoration-none">redefinir senha</a></p>
             </div>
           </form>
         </div>

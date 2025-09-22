@@ -57,29 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function formatarTelefone(input) {
-  let valor = input.value.replace(/\D/g, '');
+    // Remove tudo que não for número
+    let tel = input.value.replace(/\D/g, '');
 
+    // Mantém +55 no início
+    if(!tel.startsWith('55')) tel = '55' + tel;
 
-  if (valor.startsWith('55')) {
-    valor = valor.slice(2);
-  }
-
-
-  if (valor.length > 11) {
-    valor = valor.slice(0, 11);
-  }
-
-  let formatted = '(+55)';
-
-  if (valor.length > 0) {
-    formatted += valor.slice(0, 2); 
-  }
-  if (valor.length >= 3) {
-    formatted += '-';
-    formatted += valor.slice(2); 
-  }
-
-  input.value = formatted;
+    // Formata com parênteses e hífen
+    if(tel.length > 2) {
+        let ddd = tel.slice(2,4);
+        let numero = tel.slice(4);
+        input.value = `(+55)${ddd}-${numero}`;
+    }
 }
 
 
