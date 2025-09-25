@@ -1,5 +1,13 @@
+:root {
+  --main-background: #f1f5f9;
+}
+
+.darkmode {
+  --main-background: #030712;
+}
+
 body {
-  background-color: #f1f5f9;
+  background-color: var(--main-background);
 }
 
 .logoImg {
