@@ -37,14 +37,8 @@
           <button type="button" class="btn btn-secondary" id="darkmode"><i class="bi bi-sun-fill" id="iconeModo"></i></button>
         </div>
         <div class="text-end">
-          <a href="login.php" class="text-decoration-none">
-            <button type="button" class="btn btn-outline-light me-2">
-              Login
-            </button>
-          </a>
-          <a href="cadastroU.php">
-            <button type="button" class="btn btn-primary">Cadastre-se</button>
-          </a>
+          <a href="login.php" class="btn btn-outline-light me-2 text-decoration-none">Login</a>
+          <a href="cadastroU.php" class="btn btn-primary">Cadastre-se</a>
         </div>
       </div>
     </div>
