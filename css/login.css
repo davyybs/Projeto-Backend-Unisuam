@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+  --main-background: #f1f5f9;
+  --login-background: #ffffff;
+}
+
+.darkmode {
+  --main-background: #212529;
+  --login-background: #03071266;
+}
+
 body {
-  background-color: #f1f5f9;
+  background-color: var(--main-background);
 }
 
 .logoImg {
@@ -11,11 +21,11 @@ body {
 .loginArea {
   max-height: 600px;
   border-radius: 15px;
+  background-color: var(--login-background);
 }
 
 h1 {
   font-family: "Poppins", sans-serif;
-  color: #1e3a8a ; 
 }
 
 .form-control {

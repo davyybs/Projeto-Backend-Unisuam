@@ -15,10 +15,10 @@ require 'conexao.php';
   <body class="h-100">
     <main class="d-flex h-100">
       <section class="container d-flex flex-column justify-content-center align-items-center">
-        <div class="d-flex align-items-center justify-content-center w-75 h-75 bg-body shadow loginArea">
+        <div class="d-flex align-items-center justify-content-center w-75 h-75 shadow loginArea">
           <form action="2fa.php" method="post">
             <div class="d-flex flex-column-reverse align-items-center gap-2">
-              <h1 class="fw-semibold">Faça o Login!</h1>
+              <h1 class="fw-semibold text-body">Faça o Login!</h1>
               <a href="index.php"><img src="images/logoI.png" alt="Logo Unilivros" class="logoImg" id="imagemTema2"></a>
             </div>
             <div class="d-flex flex-column pb-4 pt-2">
@@ -27,14 +27,14 @@ require 'conexao.php';
                 <span class="input-group-text">
                   <i class="bi bi-person-fill"></i>
                 </span>
-                <input type="text" name="login" id="login" required class="form-control">
+                <input type="text" name="login" id="login" required class="form-control bg-body text-body">
               </div>
               <label for="password" class="form-label fs-4">Senha</label>
               <div class="input-group mb-1">
                 <span class="input-group-text">
                   <i class="bi bi-lock-fill"></i>
                 </span>
-                <input type="password" name="password" id="password" required class="form-control">
+                <input type="password" name="password" id="password" required class="form-control bg-body text-body">
               </div>
             </div>
             <div>
