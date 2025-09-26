@@ -22,7 +22,6 @@
           <li><a href="modeloBD.php" class="nav-link px-2 text-white">Modelo de BD</a></li>
           <li><a href="log.php" class="nav-link px-2 text-white">Tela de LOG</a></li>
           <li><a href="consulta_usuario.php" class="nav-link px-2 text-secondary">Consulta de Usuário</a></li>
-          <li><a href="cadastro_usuario.php" class="nav-link px-2 text-white">Cadastro de Usuários</a></li>
         </ul>
         <div class="me-3">
           <button type="button" class="btn btn-secondary" id=""><i class="bi bi-type"></i></button>
@@ -31,8 +30,12 @@
           <button type="button" class="btn btn-secondary" id="darkmode"><i class="bi bi-sun-fill" id="iconeModo"></i></button>
         </div>
         <div class="text-end">
-          <a href="login.php" class="btn btn-primary me-2 text-decoration-none">Login</a>
+          <a href="login.php" class="btn btn-outline-light me-2 text-decoration-none">Login</a>
         </div>
+        <div class="text-end">
+          <a href="cadastro_usuario.php" class="btn btn-primary me-2 text-decoration-none">Cadastre-se</a>
+        </div>
+      </div>
       </div>
     </div>
   </header>
