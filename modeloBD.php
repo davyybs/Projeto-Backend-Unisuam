@@ -24,16 +24,6 @@
           <li><a href="consulta_usuario.php" class="nav-link px-2 text-white">Consulta de Usuário</a></li>
           <li><a href="cadastro_usuario.php" class="nav-link px-2 text-white">Cadastro de Usuários</a></li>
         </ul>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <div class="input-group">
-            <input type="search" class="form-control text-body" placeholder="Pesquisar por..." aria-label="Search"/>
-            <span class="input-group-text">
-              <button type="submit" class="searchBtn">
-                <i class="bi bi-search"></i>
-              </button>
-            </span>
-          </div>
-        </form>
         <div class="me-3">
           <button type="button" class="btn btn-secondary" id=""><i class="bi bi-type"></i></button>
         </div>
