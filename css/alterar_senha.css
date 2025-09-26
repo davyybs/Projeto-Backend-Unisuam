@@ -1,0 +1,13 @@
+.loginArea {
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.logoImg {
+  max-width: 140px;
+}
+
+form {
+  width: 100%;
+  max-width: 380px;
+}
