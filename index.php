@@ -21,7 +21,8 @@
           <li><a href="index.php" class="nav-link px-2 text-secondary">Home</a></li>
           <li><a href="modeloBD.php" class="nav-link px-2 text-white">Modelo de BD</a></li>
           <li><a href="log.php" class="nav-link px-2 text-white">Tela de LOG</a></li>
-          <li><a href="usuario.php" class="nav-link px-2 text-white">Consulta de Usuário</a></li>
+          <li><a href="consulta_usuario.php" class="nav-link px-2 text-white">Consulta de Usuário</a></li>
+          <li><a href="cadastro_usuario.php" class="nav-link px-2 text-white">Cadastro de Usuários</a></li>
         </ul>
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <div class="input-group">
@@ -34,11 +35,13 @@
           </div>
         </form>
         <div class="me-3">
+          <button type="button" class="btn btn-secondary" id=""><i class="bi bi-type"></i></button>
+        </div>
+        <div class="me-3">
           <button type="button" class="btn btn-secondary" id="darkmode"><i class="bi bi-sun-fill" id="iconeModo"></i></button>
         </div>
         <div class="text-end">
-          <a href="login.php" class="btn btn-outline-light me-2 text-decoration-none">Login</a>
-          <a href="cadastroU.php" class="btn btn-primary">Cadastre-se</a>
+          <a href="login.php" class="btn btn-primary me-2 text-decoration-none">Login</a>
         </div>
       </div>
     </div>
@@ -167,7 +170,7 @@
               <a href="log.php" class="nav-link p-0">Tela de LOG</a>
             </li>
             <li class="nav-item mb-2">
-              <a href="usuario.php" class="nav-link p-0">Consulta de Usuário</a>
+              <a href="consulta_usuario.php" class="nav-link p-0">Consulta de Usuário</a>
             </li>
           </ul>
         </div>

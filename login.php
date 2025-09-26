@@ -42,7 +42,7 @@ require 'conexao.php';
               <button type="reset" class="btn btn-secondary fw-semibold">Limpar</button>
             </div>
             <div class="mt-3">
-              <p class="">Esqueceu sua senha? <a href="esqueci.php" class="text-decoration-none">Redefinir senha</a></p>
+              <p class="">Esqueceu sua senha? <a href="alterar_senha.php" class="text-decoration-none">Redefinir senha</a></p>
             </div>
           </form>
         </div>

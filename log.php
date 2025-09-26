@@ -9,6 +9,8 @@
   <title>UniLivros</title>
 </head>
 <body>
+
+  <!-- Header -->
   <header class="p-3 bg-dark">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -19,11 +21,12 @@
           <li><a href="index.php" class="nav-link px-2 text-white">Home</a></li>
           <li><a href="modeloBD.php" class="nav-link px-2 text-white">Modelo de BD</a></li>
           <li><a href="log.php" class="nav-link px-2 text-secondary">Tela de LOG</a></li>
-          <li><a href="usuario.php" class="nav-link px-2 text-white">Consulta de Usuário</a></li>
+          <li><a href="consulta_usuario.php" class="nav-link px-2 text-white">Consulta de Usuário</a></li>
+          <li><a href="cadastro_usuario.php" class="nav-link px-2 text-white">Cadastro de Usuários</a></li>
         </ul>
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <div class="input-group">
-            <input type="search" class="form-control text-dark" placeholder="Pesquisar por..." aria-label="Search"/>
+            <input type="search" class="form-control text-body" placeholder="Pesquisar por..." aria-label="Search"/>
             <span class="input-group-text">
               <button type="submit" class="searchBtn">
                 <i class="bi bi-search"></i>
@@ -32,25 +35,22 @@
           </div>
         </form>
         <div class="me-3">
-         <button type="button" class="btn btn-secondary" id="darkmode"><i class="bi bi-sun-fill" id="iconeModo"></i></button>
+          <button type="button" class="btn btn-secondary" id=""><i class="bi bi-type"></i></button>
+        </div>
+        <div class="me-3">
+          <button type="button" class="btn btn-secondary" id="darkmode"><i class="bi bi-sun-fill" id="iconeModo"></i></button>
         </div>
         <div class="text-end">
-          <a href="login.php" class="text-decoration-none">
-            <button type="button" class="btn btn-outline-light me-2">
-              Login
-            </button>
-          </a>
-          <a href="cadastroU.php">
-            <button type="button" class="btn btn-primary">Cadastre-se</button>
-          </a>
+          <a href="login.php" class="btn btn-primary me-2 text-decoration-none">Login</a>
         </div>
       </div>
     </div>
   </header>
 
-  <div class="d-flex bg-body">
+  <!-- Footer -->
+  <footer class="d-flex bg-body">
     <div class="container">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
         <div class="col mb-3">
           <a href="index.php" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" aria-label="Bootstrap">
             <img src="images/logoC.png" alt="Logo UniLivros" class="logoImgFooter" id="imagemTema">
@@ -79,17 +79,17 @@
           <h5>Redes Sociais</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
-              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="nav-link p-0"><i class="bi bi-instagram"> @unilivros</i></a>
             </li>
             <li class="nav-item mb-2">
-              <a href="#"><i class="bi bi-tiktok"></i></a>
+              <a href="#" class="nav-link p-0"><i class="bi bi-tiktok"> @_unilivros</i></a>
             </li>
             <li class="nav-item mb-2">
-              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#" class="nav-link p-0"><i class="bi bi-youtube"> /@unilivrosyt</i></a>
             </li>
             <li class="nav-item mb-2">
-              <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16"> <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg>
+              <a href="#" class="nav-link p-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16"> <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg> @unilivros
               </a>
             </li>
           </ul>
@@ -111,9 +111,9 @@
             </li>
           </ul>
         </div>
-      </footer>
+      </div>
     </div>
-  </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="js/darkmode.js"></script>

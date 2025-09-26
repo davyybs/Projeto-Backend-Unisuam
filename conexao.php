@@ -1,7 +1,7 @@
 <?php
-$servidor = "localhost";
+$servidor = "localhost:3306";
 $usuario = "root";
-$senha = "";
+$senha = "Mddr1605.";
 $banco = "unilivros";
 $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
 if (!$conexao) {
