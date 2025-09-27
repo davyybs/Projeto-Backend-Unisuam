@@ -42,8 +42,12 @@ require 'conexao.php';
               <button type="reset" class="btn btn-secondary fw-semibold">Limpar</button>
             </div>
             <div class="mt-3">
-              <p class="">Esqueceu sua senha? <a href="alterar_senha.php" class="text-decoration-none">Redefinir senha</a></p>
+              <p>Esqueceu sua senha? <a href="alterar_senha.php" class="text-decoration-none">Redefinir senha</a></p>
             </div>
+            <div class="">
+              <p>Ainda não possui um login? <a href="cadastro_usuario.php" class="text-decoration-none">Cadastre-se</a></p>
+            </div>
+            
           </form>
         </div>
       </section>
