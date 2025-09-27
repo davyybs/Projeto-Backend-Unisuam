@@ -2,10 +2,11 @@
 
 
 html, body {
-  background-color: #f1f5f9 !important;
+  background-color: #f1f5f9;
 }
+
 h1 {
-  color: #1e3a8a !important; 
+  color: #1e3a8a; 
 }
 .form {
   max-width: 600px;
