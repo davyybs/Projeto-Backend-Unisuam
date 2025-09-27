@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="js/fonte.js" defer></script>
   <title>UniLivros</title>
 </head>
 <body>
@@ -23,9 +24,16 @@
           <li><a href="log.php" class="nav-link px-2 text-white">Registros de Usuário</a></li>
           <li><a href="consulta_usuario.php" class="nav-link px-2 text-secondary">Consulta de Usuário</a></li>
         </ul>
-        <div class="me-3">
-          <button type="button" class="btn btn-secondary" id=""><i class="bi bi-type"></i></button>
-        </div>
+        <div class="me-3 aumentarfonte">
+  <button onclick="toggleControles()" class="btn btn-secondary" title="Acessibilidade">
+    <i class="bi bi-type"></i>
+  </button>
+  <div id="mnr-fonte" class="mnr" style="display: none">
+    <button onclick="alterarFonte(2)">A+</button>
+    <button onclick="alterarFonte(-2)">A-</button>
+    <button onclick="resetarFonte()">Resetar</button>
+  </div>
+</div>
         <div class="me-3">
           <button type="button" class="btn btn-secondary" id="darkmode"><i class="bi bi-sun-fill" id="iconeModo"></i></button>
         </div>

@@ -1,5 +1,5 @@
 <?php
-require 'conexao.php'; // Conexão com o banco
+
 
 $erro = '';
 $dados = [
@@ -109,6 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="css/cadastroU.css"/>
   <link rel="stylesheet" href="css/index.css">
+  <script src="js/fonte.js" defer></script>
   <title>Cadastro de Usuário</title>
 </head>
 <body class="bg-light">
@@ -273,43 +274,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  <script src="js/darkmode.js"></script>
-  <script>
-    function formatarTelefone(input) {
-        let tel = input.value.replace(/\D/g, '');
-        if(!tel.startsWith('55')) tel = '55' + tel;
-        if(tel.length > 2) {
-            let ddd = tel.slice(2,4);
-            let numero = tel.slice(4);
-            input.value = `(+55)${ddd}-${numero}`;
-        }
-    }
-
-    function buscarEndereco() {
-        let cep = document.getElementById('cep').value.replace(/\D/g,'');
-        if(cep.length !== 8) return;
-
-        fetch(`https://viacep.com.br/ws/${cep}/json/`)
-          .then(response => response.json())
-          .then(data => {
-              if(!data.erro){
-                  document.getElementById('rua').value = data.logradouro;
-                  document.getElementById('bairro').value = data.bairro;
-                  document.getElementById('cidade').value = data.localidade;
-                  document.getElementById('estado').value = data.uf;
-              }
-          });
-    }
-
-    function toggleSenha(id) {
-        const input = document.getElementById(id);
-        if(input.type === 'password'){
-            input.type = 'text';
-        } else {
-            input.type = 'password';
-        }
-    }
-  </script>
 </body>
 </html>

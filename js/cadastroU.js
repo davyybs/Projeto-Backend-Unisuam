@@ -1,20 +1,51 @@
-
-function validarCpf() {
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('formCadastro');
   const cpfInput = document.getElementById('cpf');
-  const cpfErro = document.getElementById('cpfErro');
-  let cpf = cpfInput.value.replace(/\D/g, '');
+  const celularInput = document.getElementById('celular');
 
-  if (!validarCPF(cpf)) {
-    cpfErro.style.display = 'block';
-    cpfInput.setCustomValidity('CPF inválido.');
-    return false;
-  } else {
-    cpfErro.style.display = 'none';
-    cpfInput.setCustomValidity('');
-    return true;
+  if (cpfInput) {
+    cpfInput.addEventListener('input', () => {
+      aplicarMascaraCPF(cpfInput);
+      document.getElementById('cpfErro')?.style.display = 'none';
+      cpfInput.setCustomValidity('');
+    });
   }
+
+  if (celularInput) {
+    celularInput.addEventListener('input', () => {
+      formatarTelefone(celularInput);
+    });
+  }
+
+  if (form) {
+    form.addEventListener('submit', validarFormulario);
+  }
+
+  document.getElementById('senha')?.addEventListener('input', validarSenha);
+  document.getElementById('confirma_senha')?.addEventListener('input', () => {
+    const senha = document.getElementById('senha').value;
+    const confirma = document.getElementById('confirma_senha').value;
+    if (senha === confirma) {
+      document.getElementById('confirma_senha').setCustomValidity('');
+    }
+  });
+});
+
+function aplicarMascaraCPF(input) {
+  let cpf = input.value.replace(/\D/g, '');
+
+  if (cpf.length > 11) cpf = cpf.slice(0, 11);
+
+  cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+  cpf = cpf.replace(/(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
+  cpf = cpf.replace(/(\d{3})\.(\d{3})\.(\d{3})(\d{1,2})/, '$1.$2.$3-$4');
+
+  input.value = cpf;
 }
+
 function validarCPF(cpf) {
+  cpf = cpf.replace(/\D/g, '');
+
   if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
 
   let soma = 0;
@@ -35,42 +66,34 @@ function validarCPF(cpf) {
 
   return true;
 }
-document.addEventListener('DOMContentLoaded', () => {
-  const selectSexo = document.getElementById('sexo');
-  const selectEstado = document.getElementById('estado');
 
-  function removerOpcaoSelecione(selectElement) {
-    const optionSelecione = selectElement.querySelector('option[value=""]');
-    if (optionSelecione) {
-      optionSelecione.remove();
-    }
+function validarCpf() {
+  const cpfInput = document.getElementById('cpf');
+  const cpfErro = document.getElementById('cpfErro');
+  let cpf = cpfInput.value;
+
+  if (!validarCPF(cpf)) {
+    cpfErro.style.display = 'block';
+    cpfInput.setCustomValidity('CPF inválido.');
+    return false;
+  } else {
+    cpfErro.style.display = 'none';
+    cpfInput.setCustomValidity('');
+    return true;
   }
-
-  if (selectSexo) {
-    selectSexo.addEventListener('focus', () => removerOpcaoSelecione(selectSexo));
-  }
-
-  if (selectEstado) {
-    selectEstado.addEventListener('focus', () => removerOpcaoSelecione(selectEstado));
-  }
-});
-
-
-function formatarTelefone(input) {
-    // Remove tudo que não for número
-    let tel = input.value.replace(/\D/g, '');
-
-    // Mantém +55 no início
-    if(!tel.startsWith('55')) tel = '55' + tel;
-
-    // Formata com parênteses e hífen
-    if(tel.length > 2) {
-        let ddd = tel.slice(2,4);
-        let numero = tel.slice(4);
-        input.value = `(+55)${ddd}-${numero}`;
-    }
 }
 
+function formatarTelefone(input) {
+  let tel = input.value.replace(/\D/g, '');
+
+  if (!tel.startsWith('55')) tel = '55' + tel;
+
+  if (tel.length > 2) {
+    let ddd = tel.slice(2, 4);
+    let numero = tel.slice(4);
+    input.value = `(+55)${ddd}-${numero}`;
+  }
+}
 
 function buscarEndereco() {
   const cep = document.getElementById('cep').value.replace(/\D/g, '');
@@ -102,31 +125,14 @@ function limparEndereco() {
   document.getElementById('estado').value = '';
 }
 
-
-function toggleSenha() {
-  const senha = document.getElementById('senha');
-  const btn = event.target;
-  if (senha.type === 'password') {
-    senha.type = 'text';
-    btn.textContent = 'Ocultar';
+function toggleSenha(id) {
+  const input = document.getElementById(id);
+  if (input.type === 'password') {
+    input.type = 'text';
   } else {
-    senha.type = 'password';
-    btn.textContent = 'Mostrar';
+    input.type = 'password';
   }
 }
-
-function toggleCSenha() {
-  const senha = document.getElementById('confirma_senha');
-  const btn = event.target;
-  if (senha.type === 'password') {
-    senha.type = 'text';
-    btn.textContent = 'Ocultar';
-  } else {
-    senha.type = 'password';
-    btn.textContent = 'Mostrar';
-  }
-}
-
 
 function validarSenha() {
   const senha = document.getElementById('senha').value;
@@ -141,7 +147,6 @@ function validarSenha() {
   especial.style.color = /[\W_]/.test(senha) ? 'green' : 'red';
 }
 
-
 function confirmarSenha() {
   const senha = document.getElementById('senha').value;
   const confirma = document.getElementById('confirma_senha').value;
@@ -153,7 +158,6 @@ function confirmarSenha() {
     return true;
   }
 }
-
 
 function validarFormulario(event) {
   event.preventDefault();
@@ -192,33 +196,5 @@ function validarFormulario(event) {
     return false;
   }
 
-  
   form.submit();
 }
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('formCadastro');
-
-  form.addEventListener('submit', validarFormulario);
-
-  document.getElementById('celular').addEventListener('input', (e) => {
-    formatarTelefone(e.target);
-  });
-
-  document.getElementById('senha').addEventListener('input', () => {
-    validarSenha();
-  });
-
-  document.getElementById('cpf').addEventListener('input', () => {
-    document.getElementById('cpfErro').style.display = 'none';
-    document.getElementById('cpf').setCustomValidity('');
-  });
-
-  document.getElementById('confirma_senha').addEventListener('input', () => {
-    const senha = document.getElementById('senha').value;
-    const confirma = document.getElementById('confirma_senha').value;
-
-    if (senha === confirma) {
-      document.getElementById('confirma_senha').setCustomValidity('');
-    }
-  });
-});

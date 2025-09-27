@@ -1,7 +1,19 @@
 :root {
   --main-background: #f1f5f9;
 }
+.mnr {
+  position: absolute;
+  background: #f1f5f9;
+  padding: 10px;
 
+}
+.mnr button {
+  border: none;
+  border-radius: 6px;
+  background-color:  #f1f5f9;
+  color: white;
+  cursor: pointer;
+}
 .darkmode {
   --main-background: #030712;
 }

@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="css/index.css">
+  <script src="js/fonte.js" defer></script>
   <title>UniLivros</title>
 </head>
 <body>
@@ -33,9 +34,21 @@
             </span>
           </div>
         </form>
-        <div class="me-3">
-          <button type="button" class="btn btn-secondary" id=""><i class="bi bi-type"></i></button>
-        </div>
+ 
+<div class="position-relative me-3">
+  <button class="btn btn-secondary" onclick="toggleControles()" title="Acessibilidade">
+    <i class="bi bi-type"></i>
+  </button>
+
+ <div id="mnr-fonte" class="mnr  text-body" style="display:none; left:-60px;">
+
+    <button class="btn btn-primary w-100 mb-2 text-body" onclick="alterarFonte(2)">A+</button>
+    <button class="btn btn-primary w-100 mb-2 text-body" onclick="alterarFonte(-2)">A-</button>
+    <button class="btn btn-primary w-100 mb-2 text-body" onclick="resetarFonte()">Resetar</button>
+  </div>
+</div>
+
+
         <div class="me-3">
           <button type="button" class="btn btn-secondary" id="darkmode"><i class="bi bi-sun-fill" id="iconeModo"></i></button>
         </div>
