@@ -59,13 +59,14 @@
               </form>
             </div>
             <div class="card-body mt-3 px-4">
-              <table class="table table-bordered table-hover">
+              <table class="table table-bordered">
                 <thead>
                   <tr>
                     <th>Data/Hora</th>
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>2° Fator de Autenticação</th>
+                    <th>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -74,30 +75,9 @@
                     <td>Davi Ferreira</td>
                     <td>422.190.737-63</td>
                     <td>CPF</td>
-                  </tr>
-                  <tr>
-                    <td>2025-09-26 15:23:49</td>
-                    <td>Davi Ferreira</td>
-                    <td>422.190.737-63</td>
-                    <td>CPF</td>
-                  </tr>
-                  <tr>
-                    <td>2025-09-26 15:23:49</td>
-                    <td>Davi Ferreira</td>
-                    <td>422.190.737-63</td>
-                    <td>CPF</td>
-                  </tr>
-                  <tr>
-                    <td>2025-09-26 15:23:49</td>
-                    <td>Davi Ferreira</td>
-                    <td>422.190.737-63</td>
-                    <td>CPF</td>
-                  </tr>
-                  <tr>
-                    <td>2025-09-26 15:23:49</td>
-                    <td>Davi Ferreira</td>
-                    <td>422.190.737-63</td>
-                    <td>CPF</td>
+                    <td>
+                      <a href="visualizar_usuario.php" class="btn btn-secondary"><i class="bi bi-eye-fill"></i> Visualizar</a>
+                    </td>
                   </tr>
                 </tbody>
               </table>
