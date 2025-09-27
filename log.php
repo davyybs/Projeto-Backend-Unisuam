@@ -58,7 +58,7 @@
                 </div>
               </form>
             </div>
-            <div class="card-body mt-3">
+            <div class="card-body mt-3 px-4">
               <table class="table table-bordered table-hover">
                 <thead>
                   <tr>
