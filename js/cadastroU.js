@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cpfInput) {
     cpfInput.addEventListener('input', () => {
       aplicarMascaraCPF(cpfInput);
-      document.getElementById('cpfErro')?.style.display = 'none';
+       const erroElement = document.getElementById('cpfErro');
+    if (erroElement) erroElement.style.display = 'none';
       cpfInput.setCustomValidity('');
     });
   }

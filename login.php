@@ -1,6 +1,6 @@
 <?php
-session_start();
-require 'conexao.php';
+  session_start();
+  require 'conexao.php';
 ?>
 <!doctype html>
 <html lang="pt-BR" class="h-100" data-bs-theme="">
@@ -19,7 +19,7 @@ require 'conexao.php';
         <div class="d-flex align-items-center justify-content-center w-75 h-75 shadow loginArea">
           <form action="2fa.php" method="post">
             <div class="d-flex flex-column-reverse align-items-center gap-2">
-              <h1 class="fw-semibold text-body">Faça o Login!</h1>
+              <h1 class="fw-semibold text-primary-emphasis">Faça o Login!</h1>
               <a href="index.php"><img src="images/logoI.png" alt="Logo Unilivros" class="logoImg" id="imagemTema2"></a>
             </div>
             <div class="d-flex flex-column pb-4 pt-2">
