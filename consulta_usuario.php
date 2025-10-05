@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/index.css">
+  <script src="js/fonte.js" defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <script src="js/fonte.js" defer></script>
+  <link rel="stylesheet" href="css/log.css">
   <title>UniLivros</title>
 </head>
 <body>
@@ -24,16 +24,18 @@
           <li><a href="log.php" class="nav-link px-2 text-white">Registros de Usuário</a></li>
           <li><a href="consulta_usuario.php" class="nav-link px-2 text-secondary">Consulta de Usuário</a></li>
         </ul>
+
         <div class="me-3 aumentarfonte">
-  <button onclick="toggleControles()" class="btn btn-secondary" title="Acessibilidade">
-    <i class="bi bi-type"></i>
-  </button>
-  <div id="mnr-fonte" class="mnr" style="display: none">
-    <button onclick="alterarFonte(2)">A+</button>
-    <button onclick="alterarFonte(-2)">A-</button>
-    <button onclick="resetarFonte()">Resetar</button>
-  </div>
-</div>
+          <button onclick="toggleControles()" class="btn btn-secondary" title="Acessibilidade">
+            <i class="bi bi-type"></i>
+          </button>
+          <div id="mnr-fonte" class="mnr" style="display: none">
+            <button onclick="alterarFonte(2)">A+</button>
+            <button onclick="alterarFonte(-2)">A-</button>
+            <button onclick="resetarFonte()">Resetar</button>
+          </div>
+        </div>
+
         <div class="me-3">
           <button type="button" class="btn btn-secondary" id="darkmode"><i class="bi bi-sun-fill" id="iconeModo"></i></button>
         </div>
@@ -48,8 +50,59 @@
     </div>
   </header>
 
+  <!-- Tabela Consulta de Usuário -->
+   <section>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header d-flex flex-wrap justify-content-between p-3">
+              <h2 class="fs-3 ms-2 fw-semibold">Usuários</h2>
+              <form class="" role="search">
+                <div class="input-group float-end">
+                  <input type="search" class="form-control text-body inputSearch" placeholder="Nome do usuário ou CPF" aria-label="Search"/>
+                  <span class="input-group-text">
+                    <button type="submit" class="searchBtn">
+                      <i class="bi bi-search"></i>
+                    </button>
+                  </span>
+                </div>
+              </form>
+            </div>
+            <div class="card-body mt-3 px-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Data de Nascimento</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2</td>
+                    <td>Davi Ferreira</td>
+                    <td>422.190.737-63</td>
+                    <td>2025-05-16</td>
+                    <td>
+                      <a href="visualizar_usuario.php" class="btn btn-secondary"><i class="bi bi-eye-fill"></i> Visualizar</a>
+                      <a href="editar_usuario.php" class="btn btn-success"><i class="bi bi-pencil-fill"></i> Editar</a>
+                      <button class="btn btn-danger"><i class="bi bi-trash-fill"></i> Excluir</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </section>
+
   <!-- Footer -->
-  <footer class="d-flex bg-body">
+  <footer class="d-flex bg-body mt-5">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
         <div class="col mb-3">
