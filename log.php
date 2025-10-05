@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/darkmode.js" defer></script>
+  <script src="js/fonte.js" defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="css/log.css">
-  <script src="js/fonte.js" defer></script>
   <title>UniLivros</title>
 </head>
 <body>
@@ -24,16 +25,17 @@
           <li><a href="log.php" class="nav-link px-2 text-secondary">Registros de Usuário</a></li>
           <li><a href="consulta_usuario.php" class="nav-link px-2 text-white">Consulta de Usuário</a></li>
         </ul>
-       <div class="position-relative me-3">
-  <button class="btn btn-secondary" onclick="toggleControles()" title="Acessibilidade">
-    <i class="bi bi-type"></i>
-  </button>
- <div id="mnr-fonte" class="mnr bg-body-secondary text-body" style="display:none; left:-60px;">
-    <button class="btn btn-primary w-100 mb-2 text-body" onclick="alterarFonte(2)">A+</button>
-    <button class="btn btn-primary w-100 mb-2 text-body" onclick="alterarFonte(-2)">A-</button>
-    <button class="btn btn-primary w-100 mb-2 text-body" onclick="resetarFonte()">Resetar</button>
-  </div>
-</div>
+
+        <div class="position-relative me-3">
+          <button class="btn btn-secondary" onclick="toggleControles()" title="Acessibilidade">
+            <i class="bi bi-type"></i>
+          </button>
+          <div id="mnr-fonte" class="mnr bg-body-secondary text-body" style="display:none; left:-60px;">
+            <button class="btn btn-primary w-100 mb-2 text-body" onclick="alterarFonte(2)">A+</button>
+            <button class="btn btn-primary w-100 mb-2 text-body" onclick="alterarFonte(-2)">A-</button>
+            <button class="btn btn-primary w-100 mb-2 text-body" onclick="resetarFonte()">Resetar</button>
+          </div>
+        </div>
 
         <div class="me-3">
           <button type="button" class="btn btn-secondary" id="darkmode"><i class="bi bi-sun-fill" id="iconeModo"></i></button>
@@ -56,7 +58,7 @@
           <div class="card">
             <div class="card-header d-flex flex-wrap justify-content-between p-3">
               <h2 class="fs-3 ms-2 fw-semibold">Registros</h2>
-              <form class="" role="search">
+              <form role="search">
                 <div class="input-group float-end">
                   <input type="search" class="form-control text-body inputSearch" placeholder="Nome do usuário ou CPF" aria-label="Search"/>
                   <span class="input-group-text">
@@ -72,21 +74,19 @@
                 <thead>
                   <tr>
                     <th>Data/Hora</th>
+                    <th>ID</th>
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>2° Fator de Autenticação</th>
-                    <th>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>2025-09-26 15:23:49</td>
+                    <td>2</td>
                     <td>Davi Ferreira</td>
                     <td>422.190.737-63</td>
                     <td>CPF</td>
-                    <td>
-                      <a href="visualizar_usuario.php" class="btn btn-secondary"><i class="bi bi-eye-fill"></i> Visualizar</a>
-                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -166,6 +166,5 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  <script src="js/darkmode.js"></script>
 </body>
 </html>
