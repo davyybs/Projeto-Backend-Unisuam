@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/alterar_senha.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/alterar_senha.css">
     <script src="js/fonte.js" defer></script>
-   <script src="js/esqueci.js" defer></script>
+    <script src="js/alterar_senha.js" defer></script>
+    <script src="js/darkmode.js" defer></script>
     <title>Redefinir Senha</title>
   </head>
   <body class="h-100">
@@ -50,10 +51,9 @@
       </section>
 
       <section class="container d-none d-lg-flex align-items-center justify-content-center pe-0">
-        <img src="images/recover.png" alt="Recuperar Senha" class="img-fluid">
+        <img src="images/library.png" alt="Livraria" class="img-fluid">
       </section>
     </main>
 
-    
   </body>
 </html>
