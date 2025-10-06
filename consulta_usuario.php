@@ -1,3 +1,8 @@
+<?php 
+  session_start();
+  require 'conexao.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -81,17 +86,29 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php 
+                    $sql = 'SELECT * FROM cadastrou';
+                    $usuarios = mysqli_query($conexao, $sql);
+                    if (mysqli_num_rows($usuarios) > 0) {
+                      foreach ($usuarios as $usuario) {
+                  ?>
                   <tr>
-                    <td>2</td>
-                    <td>Davi Ferreira</td>
-                    <td>422.190.737-63</td>
-                    <td>2025-05-16</td>
+                    <td><?= $usuario['id']?></td>
+                    <td><?= $usuario['nome']?></td>
+                    <td><?= $usuario['cpf']?></td>
+                    <td><?= date('d/m/Y', strtotime($usuario['data_nasc']))?></td>
                     <td>
                       <a href="visualizar_usuario.php" class="btn btn-secondary"><i class="bi bi-eye-fill"></i> Visualizar</a>
                       <a href="editar_usuario.php" class="btn btn-success"><i class="bi bi-pencil-fill"></i> Editar</a>
                       <button class="btn btn-danger"><i class="bi bi-trash-fill"></i> Excluir</button>
                     </td>
                   </tr>
+                  <?php 
+                      }
+                    } else {
+                      echo '<h5>Nenhum usuário foi encontrado.</h5>';
+                    }
+                  ?>
                 </tbody>
               </table>
             </div>
