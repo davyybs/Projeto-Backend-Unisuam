@@ -1,19 +1,8 @@
 :root {
   --main-background: #f1f5f9;
 }
-.mnr {
-  position: absolute;
-  background: #f1f5f9;
-  padding: 10px;
 
-}
-.mnr button {
-  border: none;
-  border-radius: 6px;
-  background-color:  #f1f5f9;
-  color: white;
-  cursor: pointer;
-}
+
 .darkmode {
   --main-background: #030712;
 }
@@ -26,8 +15,24 @@ body {
   width: 63px;
 }
 
-.input-group input {
-  width: 260px ;
+.input-group {
+  input {
+    width: 260px ;
+  } 
+}
+
+.mnr {
+  position: absolute;
+  background: #f1f5f9;
+  padding: 10px;
+
+  button {
+    border: none;
+    border-radius: 6px;
+    background-color:  #f1f5f9;
+    color: white;
+    cursor: pointer;
+  }
 }
 
 .searchBtn {
@@ -42,10 +47,12 @@ body {
   height: 400px;
 }
 
-.card1:hover, .card2:hover, .card3:hover {
-  transition: 0.3s ease;
-  transform: scale(1.05);
-  cursor: pointer;
+.card1, .card2, .card3 {
+  &:hover {
+    transition: 0.3s ease;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 }
 
 .card1 {
@@ -79,8 +86,10 @@ h3 {
   z-index: 2;
 }
 
-.hero a {
-  all: unset;
+.hero {
+  a {
+    all: unset;
+  }  
 }
 
 .logoImgFooter {

@@ -14,8 +14,10 @@ body {
   width: 63px;
 }
 
-.input-group input {
-  width: 280px !important;
+.input-group {
+  input {
+    width: 280px !important;
+  }  
 }
 
 .searchBtn {
