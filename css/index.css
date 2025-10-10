@@ -92,6 +92,10 @@ h3 {
   }  
 }
 
+.card-text {
+  font-size: 0.9em;
+}
+
 .logoImgFooter {
   width: 85px;
 }

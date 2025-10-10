@@ -35,19 +35,17 @@
           </div>
         </form>
  
-<div class="position-relative me-3">
-  <button class="btn btn-secondary" onclick="toggleControles()" title="Acessibilidade">
-    <i class="bi bi-type"></i>
-  </button>
+        <div class="position-relative me-3">
+          <button class="btn btn-secondary" onclick="toggleControles()" title="Acessibilidade">
+            <i class="bi bi-type"></i>
+          </button>
 
- <div id="mnr-fonte" class="mnr  text-body" style="display:none; left:-60px;">
-
-    <button class="btn btn-primary w-100 mb-2 text-body" onclick="alterarFonte(2)">A+</button>
-    <button class="btn btn-primary w-100 mb-2 text-body" onclick="alterarFonte(-2)">A-</button>
-    <button class="btn btn-primary w-100 mb-2 text-body" onclick="resetarFonte()">Resetar</button>
-  </div>
-</div>
-
+        <div id="mnr-fonte" class="mnr  text-body" style="display:none; left:-60px;">
+            <button class="btn btn-primary w-100 mb-2 text-body" onclick="alterarFonte(2)">A+</button>
+            <button class="btn btn-primary w-100 mb-2 text-body" onclick="alterarFonte(-2)">A-</button>
+            <button class="btn btn-primary w-100 mb-2 text-body" onclick="resetarFonte()">Resetar</button>
+          </div>
+        </div>
 
         <div class="me-3">
           <button type="button" class="btn btn-secondary" id="darkmode"><i class="bi bi-sun-fill" id="iconeModo"></i></button>
@@ -110,51 +108,116 @@
     <div class="container">
       <div class="lancamentos" id="lancamentos">
         <div>
-          <h2 class="text-body fs-4 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Lançamentos</h2>
+          <h2 class="text-body fs-3 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Lançamentos</h2>
         </div>
-        <div class="row">
-          <div class="col">
-        
+        <div class="row mb-2">
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-warning-emphasis">HQ</strong>
+                <h3 class="mb-0">Supergirl: Mulher do Amanhã</h3>
+                <div class="mb-1 text-body-secondary">Tom King</div>
+                <p class="card-text mt-2 mb-auto">
+                  Kara Zor-El passou por muitas aventuras épicas ao longo dos anos, mas hoje acredita estar sem propósito. Até que tudo muda, quando uma garota alienígena a procura para uma missão de vingança contra os vilões que exterminaram seu planeta.
+                </p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="https://m.media-amazon.com/images/I/81WCblz7GnL._UF1000,1000_QL80_.jpg" alt="Capa Supergirl Mulher do Amanhã" width="163">
+              </div>
+            </div>
           </div>
-          <div class="col">
-          </div>
-          <div class="col">
-          </div>
-          <div class="col">
+
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-success-emphasis">Livros</strong>
+                <h3 class="mb-0">Noites Brancas</h3>
+                <div class="mb-1 text-body-secondary">Fiódor Dostoiévski</div>
+                <p class="card-text mt-2 mb-auto">
+                  Noites Brancas é uma obra do escritor russo Fiódor Dostoiévski. O livro que mais aproxima Dostoiévski do romantismo, foi publicado em 1848, antes de sua prisão.
+                </p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="https://m.media-amazon.com/images/I/71F-Uf20+UL._SL1000_.jpg" alt="Capa Noites Brancas" width="174">
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="populares" id="populares">
         <div>
-          <h2 class="text-body fs-4 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Populares no momento</h2>
+          <h2 class="text-body fs-3 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Populares no momento</h2>
         </div>
-        <div class="row">
-          <div class="col">
-        
+        <div class="row mb-2">
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-success-emphasis">Livros</strong>
+                <h3 class="mb-0">A Biblioteca da Meia Noite</h3>
+                <div class="mb-1 text-body-secondary">Matt Haig</div>
+                <p class="card-text mt-2 mb-auto">
+                  Após uma tentativa de suicídio, uma mulher tem a chance de viver todas as suas vidas alternativas em uma biblioteca mágica para descobrir o que faz a vida valer a pena.
+                </p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="https://m.media-amazon.com/images/I/81iqH8dpjuL._SL1500_.jpg" alt="Capa A Biblioteca da Meia Noite" width="172.2">
+              </div>
+            </div>
           </div>
-          <div class="col">
-          </div>
-          <div class="col">
-          </div>
-          <div class="col">
+
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-success-emphasis">Livros</strong>
+                <h3 class="mb-0">A Metamorfose</h3>
+                <div class="mb-1 text-body-secondary">Franz Kafka</div>
+                <p class="card-text mt-2 mb-auto">
+                  O caixeiro-viajante Gregor acorda transformado em um enorme inseto. Isolado, ele passa a observar a reação de sua família à sua metamorfose e, enquanto luta para sobreviver, reflete sobre sua nova e estranha condição.
+                </p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="https://m.media-amazon.com/images/I/715JOcuqSSL._SL1021_.jpg" alt="Capa A Metamorfose" width="173.9">
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="recomendacoes" id="recomendacoes">
         <div>
-          <h2 class="text-body fs-4 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Recomendações</h2>
+          <h2 class="text-body fs-3 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Recomendações</h2>
         </div>
-        <div class="row">
-          <div class="col">
-        
+        <div class="row mb-2">
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-success-emphasis">Livros</strong>
+                <h3 class="mb-0">A Vida Invisível de Addie Larue</h3>
+                <div class="mb-1 text-body-secondary">V. E. Schwab</div>
+                <p class="card-text mt-2 mb-auto">
+                  Para ganhar a imortalidade, Addie LaRue faz um pacto que a condena a ser esquecida por todos, vivendo invisível por 300 anos, até encontrar o único homem que se lembra do seu nome.
+                </p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="https://m.media-amazon.com/images/I/71X245OYRBL._SL1500_.jpg" alt="Capa A Vida Invisível de Addie Larue" width="168.5">
+              </div>
+            </div>
           </div>
-          <div class="col">
-          </div>
-          <div class="col">
-          </div>
-          <div class="col">
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-danger-emphasis">Mangá</strong>
+                <h3 class="mb-0">Frieren e a Jornada Para o Além</h3>
+                <div class="mb-1 text-body-secondary">Kanehito Yamada</div>
+                <p class="card-text mt-2 mb-auto">
+                  Depois de derrotar o Rei Demônio, a elfa Frieren inicia uma longa jornada para entender a passagem do tempo, a vida e os sentimentos de seus falecidos companheiros humanos, após a grande aventura ter chegado ao fim.
+                </p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="https://m.media-amazon.com/images/I/71t11qhOQVL._SL1000_.jpg" alt="Capa Frieren e a Jornada Para o Além" width="171">
+              </div>
+            </div>
           </div>
         </div>
       </div>
