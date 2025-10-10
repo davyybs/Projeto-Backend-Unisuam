@@ -145,9 +145,9 @@ $dados = [
         <div class="alert alert-danger"><?php echo $erro; ?></div>
       <?php endif; ?>
 
-      <div class="cadArea p-5">
-        <section class="d-flex mb-5">
-          <h1 class="text-body fw-semibold">Cadastre-se</h1>
+      <div class="cadArea shadow p-5">
+        <section class="d-flex mb-5 justify-content-between">
+          <h1 class="text-primary-emphasis fw-semibold">Cadastre-se</h1>
           <a href="index.php"><img src="images/logoI.png" alt="Logo UniLivros" class="logoImg" id="imagemTema2"></a>
         </section>
       
@@ -234,44 +234,6 @@ $dados = [
                 <input class="form-control" type="text" id="cep" name="cep" maxlength="9" required 
                         value="<?php echo htmlspecialchars($dados['cep']); ?>" onblur="buscarEndereco()">
               </div>
-              <!-- Rua -->
-              <div class="col-lg-4 col-md-6 col-12 mb-3">
-                <label for="rua" class="form-label">Rua</label>
-                <input class="form-control" type="text" id="rua" name="rua" required 
-                        value="<?php echo htmlspecialchars($dados['rua']); ?>">
-              </div>
-              <!-- Data de Nascimento -->
-              <div class="col-lg-4 col-md-6 col-12 mb-3">
-                <label for="numero" class="form-label">Número</label>
-                <input class="form-control" type="text" id="numero" name="numero" required 
-                        value="<?php echo htmlspecialchars($dados['numero']); ?>">
-              </div>
-            </div>
-
-            <!-- Segunda linha -->
-            <div class="row">
-              <!-- Complemento -->
-              <div class="col-lg-4 col-md-6 col-12 mb-3">
-                <label for="complemento" class="form-label">Complemento</label>
-                <input class="form-control" type="text" id="complemento" name="complemento" 
-                        value="<?php echo htmlspecialchars($dados['complemento']); ?>">
-              </div>
-              <!-- Bairro -->
-              <div class="col-lg-4 col-md-6 col-12 mb-3">
-                <label for="bairro" class="form-label">Bairro</label>
-                <input class="form-control" type="text" id="bairro" name="bairro" required 
-                      value="<?php echo htmlspecialchars($dados['bairro']); ?>">
-              </div>
-              <!-- Sexo -->
-              <div class="col-lg-4 col-md-6 col-12 mb-3">
-                <label for="cidade" class="form-label">Cidade</label>
-                <input class="form-control" type="text" id="cidade" name="cidade" required 
-                      value="<?php echo htmlspecialchars($dados['cidade']); ?>">
-              </div>
-            </div>
-
-            <!-- Terceira linha -->
-            <div class="row">
               <!-- Estado -->
               <div class="col-lg-4 col-md-6 col-12 mb-3">
                 <label for="estado" class="form-label">Estado</label>
@@ -286,19 +248,58 @@ $dados = [
                   ?>
                 </select>
               </div>
+              <!-- Cidade -->
+              <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <label for="cidade" class="form-label">Cidade</label>
+                <input class="form-control" type="text" id="cidade" name="cidade" required 
+                      value="<?php echo htmlspecialchars($dados['cidade']); ?>">
+              </div>
+              
+              
+            </div>
+
+            <!-- Segunda linha -->
+            <div class="row">
+              <!-- Bairro -->
+              <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <label for="bairro" class="form-label">Bairro</label>
+                <input class="form-control" type="text" id="bairro" name="bairro" required 
+                      value="<?php echo htmlspecialchars($dados['bairro']); ?>">
+              </div>
+              <!-- Rua -->
+              <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <label for="rua" class="form-label">Rua</label>
+                <input class="form-control" type="text" id="rua" name="rua" required 
+                        value="<?php echo htmlspecialchars($dados['rua']); ?>">
+              </div>
+              <!-- Número -->
+              <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <label for="numero" class="form-label">Número</label>
+                <input class="form-control" type="text" id="numero" name="numero" required 
+                        value="<?php echo htmlspecialchars($dados['numero']); ?>">
+              </div>
+            </div>
+
+            <!-- Terceira linha -->
+            <div class="row">
+              <!-- Complemento -->
+              <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <label for="complemento" class="form-label">Complemento</label>
+                <input class="form-control" type="text" id="complemento" name="complemento" 
+                        value="<?php echo htmlspecialchars($dados['complemento']); ?>">
+              </div>
             </div>
 
           </section>
           <hr>
           
           <!-- Seção Acesso -->
-          <section class="my-4">
+          <section class="my-4 w-100">
             <div class="row">
               <div class="col-12">
                 <h2 class="fs-4 mb-4 text-primary-emphasis">Acesso</h2>
               </div>
             </div>
-
             <!-- Primeira linha -->
             <div class="row">
               <!-- Login -->
@@ -310,22 +311,23 @@ $dados = [
               <!-- E-mail -->
               <div class="col-lg-4 col-md-6 col-12 mb-3">
                 <label for="email" class="form-label">E-mail</label>
-                <input class="form-control" type="email" id="email" name="email" required 
+                <input class="form-control" type="email" id="email" name="email" required
                 value="<?php echo htmlspecialchars($dados['email']); ?>">
               </div>
               <div class="col-lg-4 col-md-6 col-12 mb-3 d-flex justify-content-center align-items-end">
-                <p>Já possui uma conta? <a href="login.php"> Faça o Login</a></p>
+                <input type="hidden" name="tipo_usuario" value="usuario">
+                <button type="submit" class="btn btn-primary btn-lg w-75">Cadastrar</button>
               </div>
             </div>
-
+          
             <!-- Segunda linha -->
             <div class="row">
               <!-- Senha -->
               <div class="col-lg-4 col-md-6 col-12 mb-3">
                 <label for="senha" class="form-label">Senha</label>
                 <div class="d-flex align-items-center">
-                  <input class="form-control me-2" type="password" id="senha" name="senha" required 
-                        value="<?php echo htmlspecialchars($dados['senha']); ?>">
+                  <input class="form-control me-2" type="password" id="senha" name="senha" required
+                  value="<?php echo htmlspecialchars($dados['senha']); ?>">
                   <button type="button" class="btn btn-outline-secondary" onclick="toggleSenha('senha')">Mostrar</button>
                 </div>
               </div>
@@ -333,18 +335,16 @@ $dados = [
               <div class="col-lg-4 col-md-6 col-12 mb-3">
                 <label for="confirma_senha" class="form-label">Confirmar Senha</label>
                 <div class="d-flex align-items-center">
-                  <input class="form-control me-2" type="password" id="confirma_senha" name="confirma_senha" required 
-                        value="<?php echo htmlspecialchars($dados['confirma_senha']); ?>">
+                  <input class="form-control me-2" type="password" id="confirma_senha" name="confirma_senha" required
+                  value="<?php echo htmlspecialchars($dados['confirma_senha']); ?>">
                   <button type="button" class="btn btn-outline-secondary" onclick="toggleSenha('confirma_senha')">Mostrar</button>
                 </div>
               </div>
+              <div class="col-lg-4 col-md-6 col-12 mb-3 d-flex justify-content-center align-items-end">
+                <p>Já possui uma conta? <a href="login.php"> Faça o Login</a></p>
+              </div>    
             </div>
           </section>
-          <div class="col-lg-12 col-md-6 col-12 mb-3 d-flex justify-content-center align-items-end">
-            <input type="hidden" name="tipo_usuario" value="usuario">
-            <button type="submit" class="btn btn-primary mt-3 fs-5 w-25">Cadastrar</button>
-          </div>
-
         </form>
       </div>
     </main>
