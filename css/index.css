@@ -92,6 +92,10 @@ h3 {
   }  
 }
 
+.cardConteudo {
+  cursor: pointer;
+}
+
 .card-text {
   font-size: 0.9em;
 }
