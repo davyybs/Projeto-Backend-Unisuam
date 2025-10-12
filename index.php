@@ -106,13 +106,13 @@
   <!-- Seção Conteúdo -->
   <section class="conteudo">
     <div class="container">
-      <div class="lancamentos" id="lancamentos">
+      <div class="lancamentos mb-4" id="lancamentos">
         <div>
-          <h2 class="text-body fs-3 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Lançamentos</h2>
+          <h2 class="text-primary-emphasis fs-3 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Lançamentos</h2>
         </div>
         <div class="row mb-2">
           <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative cardConteudo">
               <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-warning-emphasis">HQ</strong>
                 <h3 class="mb-0">Supergirl: Mulher do Amanhã</h3>
@@ -128,7 +128,7 @@
           </div>
 
           <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative cardConteudo">
               <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-success-emphasis">Livros</strong>
                 <h3 class="mb-0">Noites Brancas</h3>
@@ -145,13 +145,13 @@
         </div>
       </div>
 
-      <div class="populares" id="populares">
+      <div class="populares mb-4" id="populares">
         <div>
-          <h2 class="text-body fs-3 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Populares no momento</h2>
+          <h2 class="text-primary-emphasis fs-3 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Populares no momento</h2>
         </div>
         <div class="row mb-2">
           <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative cardConteudo">
               <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-success-emphasis">Livros</strong>
                 <h3 class="mb-0">A Biblioteca da Meia Noite</h3>
@@ -167,7 +167,7 @@
           </div>
 
           <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative cardConteudo">
               <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-success-emphasis">Livros</strong>
                 <h3 class="mb-0">A Metamorfose</h3>
@@ -184,13 +184,13 @@
         </div>
       </div>
 
-      <div class="recomendacoes" id="recomendacoes">
+      <div class="recomendacoes mb-4" id="recomendacoes">
         <div>
-          <h2 class="text-body fs-3 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Recomendações</h2>
+          <h2 class="text-primary-emphasis fs-3 fw-semibold nav-link mb-4"><span class="text-primary fs-3">|</span> Recomendações</h2>
         </div>
         <div class="row mb-2">
           <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative cardConteudo">
               <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-success-emphasis">Livros</strong>
                 <h3 class="mb-0">A Vida Invisível de Addie Larue</h3>
@@ -205,7 +205,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative cardConteudo">
               <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-danger-emphasis">Mangá</strong>
                 <h3 class="mb-0">Frieren e a Jornada Para o Além</h3>
