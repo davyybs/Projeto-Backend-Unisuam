@@ -98,8 +98,8 @@
                     <td><?= $usuario['cpf']?></td>
                     <td><?= date('d/m/Y', strtotime($usuario['data_nasc']))?></td>
                     <td>
-                      <a href="visualizar_usuario.php" class="btn btn-secondary"><i class="bi bi-eye-fill"></i> Visualizar</a>
-                      <a href="editar_usuario.php" class="btn btn-success"><i class="bi bi-pencil-fill"></i> Editar</a>
+                      <a href="visualizar_usuario.php?id=<?=$usuario['id']?>" class="btn btn-secondary"><i class="bi bi-eye-fill"></i> Visualizar</a>
+                      <a href="editar_usuario.php?id=<?=$usuario['id']?>" class="btn btn-success"><i class="bi bi-pencil-fill"></i> Editar</a>
                       <button class="btn btn-danger"><i class="bi bi-trash-fill"></i> Excluir</button>
                     </td>
                   </tr>
