@@ -62,9 +62,9 @@
           <div class="card">
             <div class="card-header d-flex flex-wrap justify-content-between p-3">
               <h2 class="fs-3 ms-2 fw-semibold">Registros</h2>
-              <form role="search">
+              <form action="<?= $_SERVER['PHP_SELF']?>" role="search" method="post">
                 <div class="input-group float-end">
-                  <input type="search" class="form-control text-body inputSearch" placeholder="Nome do usuário ou CPF" aria-label="Search"/>
+                  <input type="search" class="form-control text-body inputSearch" placeholder="Nome do usuário ou CPF" aria-label="Search" name="search"/>
                   <span class="input-group-text">
                     <button type="submit" class="searchBtn">
                       <i class="bi bi-search"></i>
@@ -86,7 +86,14 @@
                 </thead>
                 <tbody>
                   <?php 
-                    $sql = 'SELECT * FROM cadastrou';
+                    $search = $_POST['search'] ?? '';
+
+                    if (!empty($search)) {
+                      $sql = "SELECT * FROM cadastrou WHERE nome LIKE '%$search%'";
+                    } else {
+                      $sql = 'SELECT * FROM cadastrou';
+                    }
+
                     $usuarios = mysqli_query($conexao, $sql);
                     if (mysqli_num_rows($usuarios) > 0) {
                       foreach ($usuarios as $usuario) {
