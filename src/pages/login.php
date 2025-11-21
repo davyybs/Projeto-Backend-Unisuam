@@ -18,9 +18,35 @@
 
 <body class="h-100">
   <main class="d-flex h-100">
+    <?php 
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $login = mysqli_real_escape_string($conexao, $_POST['login']);
+        $senha = mysqli_real_escape_string($conexao, $_POST['password']);
+
+        $sql = "SELECT * FROM cadastrou WHERE login = '$login'";
+        $resultado = mysqli_query($conexao, $sql);
+
+        if (mysqli_num_rows($resultado) > 0) {
+          $usuario = mysqli_fetch_assoc($resultado);
+
+          if (password_verify($senha, $usuario['senha'])) {
+            $_SESSION['usuario_id'] = $usuario['id'];
+            $_SESSION['usuario_nome'] = $usuario['nome'];
+            $_SESSION['usuario_email'] = $usuario['email'];
+
+            header("Location: /Projeto-Backend-Unisuam/index.php");
+            exit;
+          } else {
+            echo "<p>Senha incorreta</p>";
+          }
+        } else {
+          echo "<p>Usuário não encontrado</p>";
+        }
+      }
+    ?>
     <section class="container d-flex flex-column justify-content-center align-items-center">
       <div class="d-flex align-items-center justify-content-center w-75 h-75 shadow loginArea">
-        <form action="2fa.php" method="post">
+        <form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
           <div class="d-flex flex-column-reverse align-items-center gap-2">
             <h1 class="fw-semibold text-primary-emphasis">Faça o Login!</h1>
             <a href="/Projeto-Backend-Unisuam/index.php"><img src="images/logoI.png" alt="Logo Unilivros"
