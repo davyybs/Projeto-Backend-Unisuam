@@ -129,7 +129,7 @@ $dados = [
 
 <head>
   <meta charset="UTF-8" />
-  <script src="../scripts/cadastro_usuario.js" defer></script>
+  <script src="../scripts/cadastroU.js" defer></script>
   <script src="../scripts/fonte.js" defer></script>
   <script src="../scripts/darkmode.js" defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
