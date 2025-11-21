@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  require '../config/conexao.php';
+  require_once '../config/conexao.php';
 ?>
 
 <!DOCTYPE html>
