@@ -2,6 +2,7 @@
   session_start();
   require '../config/conexao.php';
 ?>
+
 <!doctype html>
 <html lang="pt-BR" class="h-100" data-bs-theme="light">
 
@@ -34,7 +35,7 @@
             $_SESSION['usuario_nome'] = $usuario['nome'];
             $_SESSION['usuario_email'] = $usuario['email'];
 
-            header("Location: /Projeto-Backend-Unisuam/index.php");
+            header("Location: 2fa.php");
             exit;
           } else {
             echo "<p>Senha incorreta</p>";
