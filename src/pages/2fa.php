@@ -18,7 +18,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/alterar_senha.css">
+  <link rel="stylesheet" href="../css/responsividade.css">
   <script src="../scripts/fonte.js" defer></script>
+  <script src="../scripts/darkmode.js" defer></script>
   <title>Confirmar Acesso</title>
 </head>
 
@@ -131,8 +133,6 @@
       <img src="../images/library.png" alt="Livraria" class="img-fluid">
     </section>
   </main>
-
-  <script src="../scripts/darkmode.js"></script>
 </body>
 
 </html>

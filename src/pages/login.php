@@ -13,7 +13,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/responsividade.css">
   <script src="../scripts/fonte.js" defer></script>
+    <script src="../scripts/darkmode.js" defer></script>
   <title>Login</title>
 </head>
 
@@ -32,9 +34,6 @@
 
           if (password_verify($senha, $usuario['senha'])) {
             $_SESSION['usuario_id'] = $usuario['id'];
-            $_SESSION['usuario_nome'] = $usuario['nome'];
-            $_SESSION['usuario_email'] = $usuario['email'];
-
             header("Location: 2fa.php");
             exit;
           } else {
@@ -92,7 +91,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
   </script>
-  <script src="../scripts/darkmode.js"></script>
+
 </body>
 
 </html>

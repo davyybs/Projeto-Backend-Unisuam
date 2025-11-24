@@ -2,12 +2,10 @@
   session_start();
   require_once '../config/conexao.php';
 
-   if (!isset($_SESSION['usuario_id'])) {
+  if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.php");
     exit;
-  }
-
-  if (!isset($_SESSION['2fa_status']) || $_SESSION['2fa_status'] !== true) {
+  } elseif (!isset($_SESSION['2fa_status']) || $_SESSION['2fa_status'] !== true) {
     header("Location: 2fa.php");
     exit;
   }
@@ -23,8 +21,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/alterar_senha.css">
+  <link rel="stylesheet" href="../css/responsividade.css">
   <script src="../scripts/fonte.js" defer></script>
   <script src="../scripts/alterar_senha.js" defer></script>
+  <script src="../scripts/darkmode.js" defer></script>
   <title>Redefinir Senha</title>
 </head>
 
@@ -73,7 +73,6 @@
     </section>
   </main>
 
-  <script src="../scripts/darkmode.js"></script>
 </body>
 
 </html>
