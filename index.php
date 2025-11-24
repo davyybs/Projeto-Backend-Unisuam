@@ -1,6 +1,7 @@
 <?php 
   session_start();
   require_once 'src/config/conexao.php';
+  include('src/actions/log.php');
 ?>
 
 <!DOCTYPE html>
