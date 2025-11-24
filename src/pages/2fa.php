@@ -54,6 +54,8 @@
                   break;
           }
 
+          $_SESSION['2FA'] = $campoEscolhido;
+
           if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $respostaUsuario = trim($_POST['resposta']);
             $campo = $_POST['campo'];
