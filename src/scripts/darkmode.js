@@ -42,10 +42,10 @@ function trocarImagens(escuro) {
   const imagem2 = document.getElementById('imagemTema2');
 
   if (imagem1) {
-    imagem1.src = escuro ? '../images/logoWhite.png' : '../images/logoC.png';
+    imagem1.src = escuro ? '/Projeto-Backend-Unisuam/src/images/logoWhite.png' : '/Projeto-Backend-Unisuam/src/images/logoC.png';
   }
   if (imagem2) {
-    imagem2.src = escuro ? '../images/logoWhiteI.png' : '../images/logoI.png';
+    imagem2.src = escuro ? '/Projeto-Backend-Unisuam/src/images/logoWhiteI.png' : '/Projeto-Backend-Unisuam/src/images/logoI.png';
   }
 }
 
