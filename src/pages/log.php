@@ -1,7 +1,10 @@
 <?php 
   session_start();
   require_once '../config/conexao.php';
-  include('../actions/log.php');
+  
+  if (isset($_SESSION['usuario_id'])) {
+    include('src/actions/log.php');
+  }
   
   if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.php");
@@ -46,7 +49,7 @@
               <h2 class="fs-3 ms-2 fw-semibold">Registros</h2>
               <form action="<?= $_SERVER['PHP_SELF']?>" role="search" method="GET">
                 <div class="input-group float-end">
-                  <input type="search" class="form-control text-body inputSearch" placeholder="Nome do usuário ou CPF"
+                  <input type="search" class="form-control text-body inputSearch" placeholder="ID do Usuário"
                     aria-label="Search" name="search" value="<?php if(isset($_GET['search'])) echo $_GET['search']?>" />
                   <span class="input-group-text">
                     <button type="submit" class="searchBtn">
@@ -60,11 +63,9 @@
               <table class="table table-bordered">
                 <thead>
                   <tr>
-                    <th>Data/Hora</th>
                     <th>ID</th>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>2° Fator de Autenticação</th>
+                    <th>Data de Acesso</th>
+                    <th>2FA</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -72,21 +73,19 @@
                     $search = $_GET['search'] ?? '';
 
                     if (!empty($search)) {
-                      $sql = "SELECT * FROM cadastrou WHERE nome LIKE '%$search%'";
+                      $sql = "SELECT * FROM log WHERE id_usuario LIKE '%$search%'";
                     } else {
-                      $sql = 'SELECT * FROM cadastrou';
+                      $sql = 'SELECT * FROM log';
                     }
 
-                    $usuarios = mysqli_query($conexao, $sql);
-                    if (mysqli_num_rows($usuarios) > 0) {
-                      foreach ($usuarios as $usuario) {
+                    $registros = mysqli_query($conexao, $sql);
+                    if (mysqli_num_rows($registros) > 0) {
+                      foreach ($registros as $registro) {
                   ?>
                   <tr>
-                    <td><?= $usuario['data_cadastro']?></td>
-                    <td><?= $usuario['id']?></td>
-                    <td><?= $usuario['nome']?></td>
-                    <td><?= $usuario['cpf']?></td>
-                    <td>CPF</td>
+                    <td><?= $registro['id_usuario']?></td>
+                    <td><?= $registro['data_acesso']?></td>
+                    <td><?= $registro['tipo_2fa']?></td>
                   </tr>
                   <?php 
                       }

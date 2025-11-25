@@ -1,7 +1,10 @@
 <?php 
   session_start();
   require_once 'src/config/conexao.php';
-  include('src/actions/log.php');
+
+  if (isset($_SESSION['usuario_id'])) {
+    include('src/actions/log.php');
+  }
 ?>
 
 <!DOCTYPE html>
