@@ -1,14 +1,6 @@
 <?php 
   session_start();
   require_once '../config/conexao.php';
-
-  if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.php");
-    exit;
-  } elseif (!isset($_SESSION['2fa_status']) || $_SESSION['2fa_status'] !== true) {
-    header("Location: 2fa.php");
-    exit;
-  }
 ?>
 
 <!doctype html>
@@ -31,20 +23,37 @@
 <body class="h-100">
   <main class="d-flex h-100">
     <section class="container d-flex flex-column justify-content-center align-items-center">
-      <div class="d-flex align-items-center justify-content-center w-75 h-75 shadow loginArea">
-        <form id="formRecuperar">
+      <div class="d-flex align-items-center justify-content-center w-75 h-80 shadow loginArea">
+          <?php 
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+              if ($_POST['novaSenha'] === $_POST['confirmSenha']) {
+                $cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
+                $novaSenha = password_hash($_POST['novaSenha'], PASSWORD_DEFAULT);
+
+                $sql = "UPDATE cadastrou SET senha = ? WHERE cpf = ?";
+                $stmt = mysqli_prepare($conexao, $sql);
+                mysqli_stmt_bind_param($stmt, "ss", $novaSenha, $cpf);
+
+                if (mysqli_stmt_execute($stmt)) {
+                  header("Location: login.php");
+                  exit;
+                } else {
+                  $erro = "Erro ao atualizar senha!";
+                }
+              } else {
+                $erro = 'As senhas não coincidem!';
+              }
+            }
+          ?>
+        <form id="formRecuperar" method="POST">
           <div class="d-flex flex-column-reverse align-items-center gap-2 mb-3">
             <h1 class="fw-semibold text-primary-emphasis">Recuperar Senha</h1>
             <a href="/Projeto-Backend-Unisuam/index.php"><img src="../images/logoI.png" alt="Logo Unilivros"
                 class="logoImg" id="imagemTema2"></a>
           </div>
 
-          <p class="text-center mb-3">
-            Digite seu CPF para enviarmos um link de redefinição de senha para o seu e-mail cadastrado.
-          </p>
-
           <div class="d-flex flex-column pb-4 pt-2">
-            <label for="cpf" class="form-label fs-4">CPF</label>
+            <label for="cpf" class="form-label fs-5">CPF</label>
             <div class="input-group mb-1">
               <span class="input-group-text">
                 <i class="bi bi-person-vcard-fill"></i>
@@ -52,10 +61,31 @@
               <input type="text" name="cpf" id="cpf" required maxlength="14" class="form-control">
             </div>
             <div id="cpf-erro" class="text-danger fw-semibold d-none">CPF inválido.</div>
+            
+            <label for="novaSenha" class="form-label fs-5">Nova Senha</label>
+            <div class="input-group mb-1">
+              <span class="input-group-text">
+                <i class="bi bi-lock-fill"></i>
+              </span>
+              <input type="password" name="novaSenha" id="novaSenha" class="form-control" required>
+            </div>
+            
+            <label for="confirmSenha" class="form-label fs-5">Confirmar Senha</label>
+            <div class="input-group mb-1">
+              <span class="input-group-text">
+                <i class="bi bi-lock-fill"></i>
+              </span>
+              <input type="password" name="confirmSenha" id="confirmSenha" class="form-control" required>
+            </div>
+            <?php 
+              if (isset($erro)) {
+                echo "<p class='text-danger mt-2 mb-0'>$erro</p>";
+              }
+            ?>
           </div>
 
           <div class="mb-3">
-            <button type="submit" id="btnEnviar" class="btn btn-primary fw-semibold" disabled>Enviar Link</button>
+            <button type="submit" id="btnEnviar" class="btn btn-primary fw-semibold" disabled>Enviar</button>
             <button type="reset" class="btn btn-secondary fw-semibold">Limpar</button>
           </div>
 

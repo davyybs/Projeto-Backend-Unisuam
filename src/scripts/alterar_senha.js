@@ -38,29 +38,6 @@ cpfInput.addEventListener("input", () => {
   }
 });
 
-document.getElementById("formRecuperar").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  btnEnviar.disabled = true;
-  mostrarMensagem("Enviando...", "alert-info");
-  try {
-    const response = await fetch("http://localhost/php/enviar.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify({ cpf: cpfInput.value.replace(/\D/g, "") })
-    });
-    const data = await response.json();
-    if (response.ok) {
-      mostrarMensagem(data.sucesso || "Link enviado para o e-mail cadastrado!", "alert-success");
-      cpfInput.value = "";
-      btnEnviar.disabled = true;
-    } else {
-      mostrarMensagem(data.erro || "Erro ao enviar e-mail", "alert-danger");
-    }
-  } catch (error) {
-    mostrarMensagem("Erro de conexão. Tente novamente.", "alert-danger");
-  }
-});
-
 function mostrarMensagem(texto, classe) {
   mensagemContainer.innerHTML = `<div class="alert ${classe}" role="alert">${texto}</div>`;
 }

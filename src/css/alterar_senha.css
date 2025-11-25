@@ -33,6 +33,10 @@ form {
   max-width: 380px;
 }
 
+.form-label {
+  width: 50%  ;
+}
+
 img {
   width: 97%;
 }
