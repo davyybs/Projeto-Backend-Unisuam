@@ -3,7 +3,7 @@
   require_once '../config/conexao.php';
   
   if (isset($_SESSION['usuario_id'])) {
-    include('src/actions/log.php');
+    include('../actions/log.php');
   }
 
   if (!isset($_SESSION['usuario_id'])) {
