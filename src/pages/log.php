@@ -3,7 +3,7 @@
   require_once '../config/conexao.php';
   
   if (isset($_SESSION['usuario_id'])) {
-    include('src/actions/log.php');
+    include('../actions/log.php');
   }
   
   if (!isset($_SESSION['usuario_id'])) {
@@ -64,6 +64,7 @@
                 <thead>
                   <tr>
                     <th>ID</th>
+                    <th>Nome</th>
                     <th>Data de Acesso</th>
                     <th>2FA</th>
                   </tr>
@@ -81,16 +82,27 @@
                     $registros = mysqli_query($conexao, $sql);
                     if (mysqli_num_rows($registros) > 0) {
                       foreach ($registros as $registro) {
+                        $idUser = $registro['id_usuario'];
                   ?>
                   <tr>
                     <td><?= $registro['id_usuario']?></td>
+                    <td>
+                      <?php
+                        $sqlNome = "SELECT nome FROM cadastrou WHERE id = '$idUser'";
+
+                        $query = mysqli_query($conexao, $sqlNome);
+                        $nomeUser = mysqli_fetch_assoc($query);
+
+                        echo $nomeUser['nome'];
+                      ?>
+                    </td>
                     <td><?= $registro['data_acesso']?></td>
                     <td><?= $registro['tipo_2fa']?></td>
                   </tr>
                   <?php 
                       }
                     } else {
-                      echo '<h5>Nenhum usuário foi encontrado</h5>';
+                      echo '<td colspan="4">Nenhum usuário foi encontrado</td>';
                     }
                   ?>
                 </tbody>

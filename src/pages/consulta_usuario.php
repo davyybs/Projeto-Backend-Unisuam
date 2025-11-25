@@ -3,7 +3,7 @@
   require_once '../config/conexao.php';
   
   if (isset($_SESSION['usuario_id'])) {
-    include('src/actions/log.php');
+    include('../actions/log.php');
   }
   
   if (!isset($_SESSION['usuario_id'])) {
@@ -101,7 +101,7 @@
                   <?php 
                       }
                     } else {
-                      echo '<h5>Nenhum usuário foi encontrado.</h5>';
+                      echo '<td colspan="5">Nenhum usuário foi encontrado</td>';
                     }
                   ?>
                 </tbody>
