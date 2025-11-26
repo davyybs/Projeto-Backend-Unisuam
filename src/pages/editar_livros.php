@@ -135,7 +135,7 @@
                     <i class="bi bi-save"></i> Salvar Alterações
                 </button>
 
-                <a href="editar_livros.php" class="btn btn-secondary">
+                <a href="visualizar_livros.php" class="btn btn-secondary">
                     <i class="bi bi-arrow-left"></i> Voltar
                 </a>
             </div>
