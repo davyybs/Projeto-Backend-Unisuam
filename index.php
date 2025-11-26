@@ -46,6 +46,7 @@ while (count($capas) < 3) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="src/css/user.css">
   <link rel="stylesheet" href="src/css/index.css">
+  <link rel="stylesheet" href="src/css/fonte.css">
   <script src="src/scripts/fonte.js" defer></script>
   <script src="src/scripts/index.js" defer></script>
   <script src="src/scripts/darkmode.js" defer></script>

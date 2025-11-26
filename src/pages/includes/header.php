@@ -129,10 +129,15 @@
 
     <!-- Mobile: Fonte e Dark Mode -->
     <div class="d-flex justify-content-center mb-2 flex-wrap">
-      <div class="me-2">
+      <div class="me-2 position-relative">
         <button onclick="toggleControles()" class="btn btn-secondary mb-1" title="Acessibilidade">
           <i class="bi bi-type"></i>
         </button>
+        <div id="mnr-fonte-mobile" class="mnr" style="display:none; flex-direction: column;">
+          <button onclick="alterarFonte(2)">A+</button>
+          <button onclick="alterarFonte(-2)">A-</button>
+          <button onclick="resetarFonte()">Resetar</button>
+        </div>
       </div>
 
       <div>

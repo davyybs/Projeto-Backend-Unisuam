@@ -1,0 +1,49 @@
+
+:root {
+  --main-background: #f1f5f9;
+  --primary: #0d6efd;
+  --primary-dark: #0b5ed7;
+  --footer-5:#111827;
+}
+
+.darkmode {
+  --main-background: #030712;
+  --footer-5:#6ea8fe;
+}
+
+.mnr {
+  position: absolute;
+  background: #f1f5f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 99;
+}
+
+.mnr button {
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  padding: 6px;
+  transition: 0.2s;
+}
+
+.mnr button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .mnr {
+    position:relative !important;
+    left:2px;
+    background: #f1f5f9;
+    padding: 8px;
+    border-radius: 8px;          
+    flex-direction: row;
+    gap: 4px;
+    z-index: 99999 !important;  
+  
+  }
+}

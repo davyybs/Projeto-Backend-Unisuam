@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="../css/responsividade.css">
   <link rel="stylesheet" href="../css/user.css">
   <link rel="stylesheet" href="../css/log.css">
+  <link rel="stylesheet" href="../css/fonte.css">
   <script src="../scripts/user.js" defer></script>
   <script src="../scripts/darkmode.js" defer></script>
   <script src="../scripts/fonte.js" defer></script>
