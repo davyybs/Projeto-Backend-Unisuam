@@ -1,105 +1,311 @@
+/* ===== Variáveis de cor ===== */
 :root {
   --main-background: #f1f5f9;
+  --primary: #0d6efd;
+  --primary-dark: #0b5ed7;
+  --footer-5:#111827;
 }
-
 
 .darkmode {
   --main-background: #030712;
+  --footer-5:#dee2e6;
+}
+
+footer h5 {
+  color: var(--footer-5) !important;
 }
 
 body {
   background-color: var(--main-background);
+  color: #111827;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
+/* ===== Header / Logo ===== */
 .logoImg {
   width: 63px;
 }
 
-.input-group {
-  input {
-    width: 260px ;
-  } 
+.input-group input {
+  width: 260px;
 }
 
+/* ===== Menu de acessibilidade ===== */
 .mnr {
   position: absolute;
   background: #f1f5f9;
   padding: 10px;
-
-  button {
-    border: none;
-    border-radius: 6px;
-    background-color:  #f1f5f9;
-    color: white;
-    cursor: pointer;
-  }
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 99;
 }
 
+.mnr button {
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  padding: 6px;
+  transition: 0.2s;
+}
+
+.mnr button:hover {
+  opacity: 0.9;
+}
+
+/* ===== Descrição com "Saiba Mais" ===== */
+.descricao-curta {
+  max-height: 4.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  transition: max-height 0.25s ease;
+}
+
+.descricao-curta.expandida {
+  max-height: 999px;
+  -webkit-line-clamp: unset;
+}
+
+.saiba-mais {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  
+}
+button.saiba-mais {
+  font-size: inherit !important;
+}
+.saiba-mais:hover {
+  text-decoration: underline;
+}
+
+/* ===== Capa do Livro ===== */
+.livro-capa {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== Botão de busca ===== */
 .searchBtn {
-  background: none; 
-  border: none;   
-  padding: 0;    
-  margin: 0;
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
+/* ===== Cards Hero ===== */
 .cardH {
-  height: 400px;
+  min-height: 400px;
 }
 
-.card1, .card2, .card3 {
-  &:hover {
-    transition: 0.3s ease;
-    transform: scale(1.05);
-    cursor: pointer;
-  }
-}
-
-.card1 {
-  background-image: url('https://cdn2.penguin.com.au/covers/original/9781779526076.jpg');
-  background-size: cover;
-  background-position: center;
+.card1:hover,
+.card2:hover,
+.card3:hover {
   transition: 0.3s ease;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
-.card2 {
-  background-image: url('https://m.media-amazon.com/images/I/81iqH8dpjuL.jpg');
-  background-size: cover;
-  background-position: 0px -60px;
-  transition: 0.3s ease;
+/* ===== Blur e Mensagem de Aluguel ===== */
+#blurAluga {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1500;
 }
 
-.card3 {
-  background-image: url('https://m.media-amazon.com/images/I/71K-luk0zcL._UF894,1000_QL80_.jpg');
-  background-size: cover;
-  transition: 0.3s ease;
+#mensagemAluga {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0d6efd;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  z-index: 34000;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
+.livro-card-inner h4 {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Overlay escura */
 .overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-h3 {
-  z-index: 2;
-}
+h3 { z-index: 2; }
 
-.hero {
-  a {
-    all: unset;
-  }  
-}
-
-.cardConteudo {
+.hero a {
+  all: unset;
   cursor: pointer;
 }
 
-.card-text {
-  font-size: 0.9em;
+.cardConteudo { cursor: pointer; }
+
+.card-text { font-size: 0.95em; }
+
+.logoImgFooter { width: 85px; }
+
+/* ===== Carrossel ===== */
+.livros-container-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
 }
 
-.logoImgFooter {
-  width: 85px;
+.livros-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 6px 4px;
+  width: 100%;
+}
+
+.livros-container::-webkit-scrollbar { display: none; }
+
+.livro-info {
+  padding: 8px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.livro-titulo {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.livro-autor {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.livro-card .row { margin: 0; }
+
+.seta {
+  background-color: var(--primary);
+  border: none;
+  padding: 10px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.12s ease;
+  box-shadow: 0 2px 8px rgba(13,110,253,0.12);
+}
+
+.seta:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.seta:active {
+  transform: scale(0.98);
+}
+
+/* ===== FIX Responsividade ===== */
+.livro-card {
+  flex-shrink: 0 !important;
+  width: 240px;
+}
+
+.modelo-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+ 
+}
+
+.modelo-scroll::-webkit-scrollbar {
+  height: 8px;                 /* altura da barra */
+}
+
+.modelo-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+.modelo-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.modelo-img {
+  width: 900px;  
+  max-width: none; 
+}
+@media (max-width: 900px) {
+  .seta { display: none !important; }
+  .livro-card {
+    min-width: 260px;
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .livros-container-wrapper { gap: 0; }
+  .livros-container {
+    flex-wrap: nowrap;
+    gap: 14px;
+    overflow-x: auto;
+  }
+   .cardH {
+    min-height: auto;
+    height: auto;
+}
+}
+
+@media (max-width: 576px) {
+  .livros-container-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .modelo-img {
+    width: 800px; 
+  
+}
+  .livros-container { width: 100%; }
+
+  .livro-card {
+    width: 200px !important;
+    min-width: 200px !important;
+    max-width: 200px !important;
+  }
+
+  .livro-capa {
+    height: 220px !important;
+  }
+ 
+  .modelobd-img {
+    width: 150%;       
+  
+}
 }

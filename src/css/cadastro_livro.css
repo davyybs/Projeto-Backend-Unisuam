@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --main-background: #f1f5f9;
+  --login-background: #ffffff;
+  --border: #d1d5db;
+  --accent: #2563eb;
+  --text: #111827;
+  --subtext: #6b7280;
+  --input-background: #ffffff;
+  --container-background: #ffffff;
+  --textarea-background: #fafafa;
+}
+
+.darkmode {
+  --main-background: #212529;
+  --login-background: #03071266;
+  --border: #334155;
+  --accent: #3b82f6;
+  --text: #f1f5f9;
+  --subtext: #cbd5e1;
+  --input-background: #1e293b;
+  --container-background: #0f172a;
+  --textarea-background: #1e293b;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--main-background);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.container {
+  background: var(--container-background);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  width: 900px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.subtitulo {
+  font-size: 0.95rem;
+  color: var(--subtext);
+  margin-bottom: 25px;
+}
+
+
+.upload-box {
+  float: left;
+  width: 200px;
+  margin-right: 30px;
+  text-align: center;
+}
+
+.upload-label {
+  display: block;
+  cursor: pointer;
+}
+
+.upload-area {
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  padding: 40px 10px;
+  background: var(--input-background);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-area:hover {
+  border-color: var(--accent);
+}
+
+.upload-area span {
+  font-size: 2rem;
+  display: block;
+}
+
+.upload-area img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.formato {
+  font-size: 0.8rem;
+  color: var(--subtext);
+}
+
+#capa {
+  display: none;
+}
+
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 18px;
+  overflow: hidden;
+}
+
+.logoImg {
+  width: 120px;
+}
+
+label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--input-background);
+  color: var(--text);
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+}
+
+
+.descricao-container {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.descricao-container textarea {
+  resize: vertical;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: var(--textarea-background);
+  color: var(--text);
+  transition: border-color 0.2s ease, background-color 0.2s;
+}
+
+.descricao-container textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  background-color: var(--input-background);
+}
+
+
+.botao {
+  margin-top: 20px;
+  margin-left: 575px;
+  text-align: right;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 95%;
+    padding: 25px 30px;
+  }
+
+  .form-grid {
+    column-gap: 25px;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .container {
+    padding: 25px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .descricao-container {
+    grid-column: span 1;
+  }
+
+  .upload-box {
+    width: 100%;
+    float: none;
+    margin: 0 auto 25px auto;
+  }
+
+  .botao {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 20px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .upload-area {
+    padding: 25px 10px;
+  }
+
+  .form-grid {
+    row-gap: 14px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .container {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .subtitulo {
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+  }
+
+  input,
+  textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .upload-area span {
+    font-size: 1.6rem;
+  }
+
+  .upload-box {
+    width: 100%;
+  }
+
+  .botao {
+    margin-top: 15px;
+  }
+}
+
+
