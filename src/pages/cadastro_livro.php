@@ -1,59 +1,67 @@
 <?php
-include('../config/conexao.php');
+  include('../config/conexao.php');
+  
+  if (isset($_SESSION['usuario_id'])) {
+    include('../actions/log.php');
+  
+  }
+  
+  include('../actions/loginVerify.php');
+  include('../actions/admin.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $titulo = $_POST['titulo'] ?? '';
-    $autor = $_POST['autor'] ?? '';
-    $isbn = $_POST['isbn'] ?? '';
-    $genero = $_POST['genero'] ?? '';
-    $descricao = $_POST['descricao'];
-    $edicao = $_POST['edicao'] ?? '';
-    $ano_publicacao = $_POST['ano_publicacao'] ?? '';
-    $paginas = $_POST['paginas'] ?? '';
-    $quantidade = $_POST['quantidade'] ?? '';
-    $link_capa = $_POST['link_capa'] ?? '';
-    $capa = '';
-
-   
-    if ((!empty($_FILES['capa']['name']) && !empty($link_capa)) ||
-        (empty($_FILES['capa']['name']) && empty($link_capa))) {
-        
-        echo "<script>
-                alert('❌ Escolha apenas UMA opção: envie uma imagem OU insira um link.');
-                document.getElementById('capa').value = '';
-                document.getElementById('link_capa').value = '';
-                history.back();
-              </script>";
-        exit; 
-    }
-
-   
-    if (!empty($_FILES['capa']['name'])) {
-        $capa = $_FILES['capa']['name'];
-        $pastaDestino = '../uploads/';
-        $caminhoCapa = $pastaDestino . basename($capa);
-
-        if (!move_uploaded_file($_FILES['capa']['tmp_name'], $caminhoCapa)) {
-            echo "<script>alert('⚠️ Erro ao enviar a imagem da capa.'); history.back();</script>";
-            exit;
-        }
-    } 
-    
-    else {
-        $capa = $link_capa;
-    }
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $titulo = $_POST['titulo'] ?? '';
+      $autor = $_POST['autor'] ?? '';
+      $isbn = $_POST['isbn'] ?? '';
+      $genero = $_POST['genero'] ?? '';
+      $descricao = $_POST['descricao'];
+      $edicao = $_POST['edicao'] ?? '';
+      $ano_publicacao = $_POST['ano_publicacao'] ?? '';
+      $paginas = $_POST['paginas'] ?? '';
+      $quantidade = $_POST['quantidade'] ?? '';
+      $link_capa = $_POST['link_capa'] ?? '';
+      $capa = '';
 
     
-    $sql = "INSERT INTO livros (titulo, autor, isbn, genero, descricao, edicao, ano_publicacao, paginas, quantidade, capa)
-        VALUES ('$titulo', '$autor', '$isbn', '$genero', '$descricao', '$edicao', '$ano_publicacao', '$paginas', '$quantidade', '$capa')";
+      if ((!empty($_FILES['capa']['name']) && !empty($link_capa)) ||
+          (empty($_FILES['capa']['name']) && empty($link_capa))) {
+          
+          echo "<script>
+                  alert('❌ Escolha apenas UMA opção: envie uma imagem OU insira um link.');
+                  document.getElementById('capa').value = '';
+                  document.getElementById('link_capa').value = '';
+                  history.back();
+                </script>";
+          exit; 
+      }
+
+    
+      if (!empty($_FILES['capa']['name'])) {
+          $capa = $_FILES['capa']['name'];
+          $pastaDestino = '../uploads/';
+          $caminhoCapa = $pastaDestino . basename($capa);
+
+          if (!move_uploaded_file($_FILES['capa']['tmp_name'], $caminhoCapa)) {
+              echo "<script>alert('⚠️ Erro ao enviar a imagem da capa.'); history.back();</script>";
+              exit;
+          }
+      } 
+      
+      else {
+          $capa = $link_capa;
+      }
+
+      
+      $sql = "INSERT INTO livros (titulo, autor, isbn, genero, descricao, edicao, ano_publicacao, paginas, quantidade, capa)
+          VALUES ('$titulo', '$autor', '$isbn', '$genero', '$descricao', '$edicao', '$ano_publicacao', '$paginas', '$quantidade', '$capa')";
 
 
-    if ($conexao->query($sql)) {
-        echo "<script>alert('✅ Livro cadastrado com sucesso!'); window.location.href='cadastro_livro.php';</script>";
-    } else {
-        echo "<script>alert('❌ Erro ao cadastrar livro: {$conexao->error}'); history.back();</script>";
-    }
-}
+      if ($conexao->query($sql)) {
+          echo "<script>alert('✅ Livro cadastrado com sucesso!'); window.location.href='cadastro_livro.php';</script>";
+      } else {
+          echo "<script>alert('❌ Erro ao cadastrar livro: {$conexao->error}'); history.back();</script>";
+      }
+  }
 ?>
 
 

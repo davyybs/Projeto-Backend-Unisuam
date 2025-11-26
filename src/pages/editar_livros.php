@@ -1,22 +1,24 @@
 <?php
-session_start();
-require_once '../config/conexao.php';
+    session_start();
+    require_once '../config/conexao.php';
+    include('../actions/loginVerify.php');
+    include('../actions/admin.php');
 
-if (!isset($_GET['id'])) {
-    die("ID do livro não informado.");
-}
+    if (!isset($_GET['id'])) {
+        die("ID do livro não informado.");
+    }
 
-$id = intval($_GET['id']);
+    $id = intval($_GET['id']);
 
-// Buscar o livro pelo ID
-$sql = "SELECT * FROM livros WHERE id = $id";
-$result = mysqli_query($conexao, $sql);
+    // Buscar o livro pelo ID
+    $sql = "SELECT * FROM livros WHERE id = $id";
+    $result = mysqli_query($conexao, $sql);
 
-if (mysqli_num_rows($result) == 0) {
-    die("Livro não encontrado.");
-}
+    if (mysqli_num_rows($result) == 0) {
+        die("Livro não encontrado.");
+    }
 
-$livro = mysqli_fetch_assoc($result);
+    $livro = mysqli_fetch_assoc($result);
 ?>
 
 <!doctype html>

@@ -1,6 +1,10 @@
 <?php 
   session_start();
   require '../config/conexao.php';
+
+  if (isset($_SESSION['usuario_id'])) {
+    include('../actions/log.php');
+  }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -66,7 +70,20 @@
                     <th>Ano</th>
                     <th>Capa</th>
                     <th>Quantidade</th>
-                    <th>Ações</th>
+                    <?php
+                      if (isset($_SESSION['usuario_id'])) {
+                        $idUsuario = $_SESSION['usuario_id'];
+                        $sql = "SELECT tipo_usuario FROM cadastrou WHERE id = '$idUsuario'";
+                        $query = mysqli_query($conexao, $sql);
+                        $tipo_usuario = mysqli_fetch_assoc($query);
+
+                        if ($tipo_usuario['tipo_usuario'] == 'admin') {
+                     ?>
+                      <th>Ações</th>
+                     <?php
+                        }
+                      }
+                    ?>
                   </tr>
                 </thead>
 
@@ -113,7 +130,11 @@
                     </td>
 
                     <td><?= $livro['quantidade']?></td>
-
+                    
+                    <?php 
+                      if (isset($_SESSION['usuario_id'])) {
+                        if ($tipo_usuario['tipo_usuario'] == 'admin') { 
+                    ?>
                     <!-- BOTÕES -->
                     <td class="d-flex gap-2 justify-content-center">
 
@@ -130,6 +151,10 @@
                      Excluir
                     </a>
                     </td>
+                    <?php 
+                        }
+                      }
+                    ?>
                   </tr>
                   <?php 
                       } 
