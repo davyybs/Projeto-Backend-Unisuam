@@ -20,7 +20,8 @@
 
     <!-- Menu Desktop -->
     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 d-none d-lg-flex">
-      <li><a href="/Projeto-Backend-Unisuam/src/pages/modeloBD.php" class="nav-link px-2 text-white">Modelo Conceitual</a></li>
+      <li><a href="/Projeto-Backend-Unisuam/src/pages/visualizar_livros.php" class="nav-link px-2 text-white">Visualizar Livros</a></li>
+      <li><a href="/Projeto-Backend-Unisuam/src/pages/cadastro_livro.php" class="nav-link px-2 text-white">Cadastro de Livros</a></li>
       <li><a href="/Projeto-Backend-Unisuam/src/pages/log.php" class="nav-link px-2 text-white">Registros de Usuário</a></li>
       <li><a href="/Projeto-Backend-Unisuam/src/pages/consulta_usuario.php" class="nav-link px-2 text-white">Consulta de Usuário</a></li>
     </ul>
