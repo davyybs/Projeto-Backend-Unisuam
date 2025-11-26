@@ -46,7 +46,7 @@ CREATE TABLE `cadastrou` (
   UNIQUE KEY `cpf` (`cpf`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `login` (`login`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,7 +55,7 @@ CREATE TABLE `cadastrou` (
 
 LOCK TABLES `cadastrou` WRITE;
 /*!40000 ALTER TABLE `cadastrou` DISABLE KEYS */;
-INSERT INTO `cadastrou` VALUES (1,'João Pedro Coelho','2007-06-18','Transgênero','João Pedro Coelho','163.984.827-43','jpfc768@gmail.com','(+55)21-991748342','25220574','Rua BK','5','9','Cangulo','Duque de Caxias','RJ','loginu','$2y$10$S1agutRShYfv7gHkAc9PU.0C143bBkBTIhW8U4u5lemJKq30810Q2','usuario','2025-09-23 01:35:53'),(2,'Davi Ferreira','2007-05-16','Masculino','Micheli Ferreira','42219073763','daviferreira88@gmail.com','(+55)21-977754365','25211290','Beco Mané Garrincha','24','Em frente ao posto de gasolina','Jardim Primavera','Duque de Caxias','RJ','davibs','$2y$10$tG7nG3h7Qt4.Wd4RyaIqtO9BasV1o6Fgd88KVfP2ZDuB8nk1ERvWC','usuario','2025-09-26 21:23:49'),(3,'Joseph Joestar','1920-09-27','Masculino','LIsa Lisa','19017115769','jojogoat@gmail.com','(+55)21-977234567','25211291','Battle Tendency','2','Próximo aos Homens do Pilar','Brooklyn','Nova York','RJ','JoJo','$2y$10$WrYGwi20vvDxAgWrAPxwdu4yytl67tAhvbQkk7kSfz/Tvf0jtE58e','usuario','2025-10-02 01:29:30'),(4,'Testsifasfe','2000-05-05','Masculino','afeefageag','190.422.737-63','daviferreira8888@gmail.com','21114123535453','25211200','asdasfsa','dasda','dasdaa','sdafag','adgdgg','RJ','Teste','$2y$10$H1CVRQer/nTmTATayJA1yOlPEiaUF7a07gIrd0UCmztaEoidESPV6','usuario','2025-11-21 18:50:31');
+INSERT INTO `cadastrou` VALUES (1,'admin','2025-01-01','Prefiro não informar','#','190.422.737-63','admin@gmail.com','(+55)21-96668-2735','25211200','Rua Chuí','S/N','#','Vila Urussaí','Duque de Caxias','RJ','admin','$2y$10$B0Qs3/po2kZ.TApuk549ruiuSuGtXM.EKZtau0.kpGTXDUBTRlYQu','admin','2025-11-26 00:42:30'),(2,'Usuário Comum','2025-01-01','Prefiro não informar','#','171.698.657-50','user@gmail.com','(+55)21-97775-4456','25211200','Rua Chuí','S/N','#','Vila Urussaí','Duque de Caxias','RJ','User','$2y$10$G8ulyAguoMQPItLZ8oanQe.0zKTv1DWLr6EM5sDRlcBoRh4Pio7Y2','usuario','2025-11-26 00:46:33');
 /*!40000 ALTER TABLE `cadastrou` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,18 +67,19 @@ DROP TABLE IF EXISTS `livros`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `livros` (
-  `id_livro` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `isbn` bigint DEFAULT NULL,
-  `titulo` varchar(60) NOT NULL,
-  `autor` varchar(60) NOT NULL,
-  `num_paginas` int NOT NULL,
-  `genero` varchar(25) NOT NULL,
-  `edicao` varchar(10) NOT NULL,
-  `ano` int NOT NULL,
-  `capa` varchar(150) NOT NULL,
-  `quant` int NOT NULL,
-  PRIMARY KEY (`id_livro`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `titulo` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `autor` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `paginas` int DEFAULT NULL,
+  `genero` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `descricao` text COLLATE utf8mb4_general_ci,
+  `edicao` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ano_publicacao` int DEFAULT NULL,
+  `capa` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `quantidade` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,7 +88,7 @@ CREATE TABLE `livros` (
 
 LOCK TABLES `livros` WRITE;
 /*!40000 ALTER TABLE `livros` DISABLE KEYS */;
-INSERT INTO `livros` VALUES (1,9788576573135,'Duna','Frank Herbert',680,'Ficção Científica','1 de 6',2017,'https://m.media-amazon.com/images/I/81zN7udGRUL._SL1500_.jpg',50);
+INSERT INTO `livros` VALUES (1,6525943302,'Frieren e a Jornada Para o Além - Novel 01','Mei Hachimoku',144,'Novel','Esta é uma história que se passa algum tempo antes de Frieren partir em sua jornada para compreender as pessoas.A coletânea de contos consta com cinco capítulos que exploram diferentes protagonistas: Frieren, Fern, Stark, Lawine, Kanne e, por fim, Aura.',' 1ª',2025,'https://m.media-amazon.com/images/I/712qQnbTqgL._SY466_.jpg',1),(2,6525929970,'Supergirl: Mulher Do Amanhã','Tom King',280,'HQ','Kara Zor-El, a Supergirl, já vivenciou muitas aventuras épicas ao longo dos anos. Porém, nos últimos tempos, ela está passando por uma crise em relação ao seu propósito no mundo. Ela é uma jovem que, depois de ter visto seu planeta ser destruído, foi enviada à Terra para proteger e ajudar o seu primo bebê; contudo, no fim das contas, ele acabou nem precisando dela. Na verdade, aonde quer que ela vá em seu mundo adotivo, as pessoas a veem só como a prima do Superman. Mas a rotina de Kara está prestes a virar de cabeça para baixo. Ao se deparar com uma garota alienígena que busca vingança pelo assassinato de seu pai, a Supergirl se verá obrigada a repensar as suas convicções para ajudar a menina. É então que uma kryptoniana e uma criança furiosa embarcam numa jornada perigosa no melhor estilo espada e feitiçaria espacial que irá mudar a vida de ambas para sempre! ',' 1ª',2025,'https://m.media-amazon.com/images/I/51+cpjRFlmL._SY466_.jpg',1),(3,8555340853,'Enfim, capivaras','Luisa Geisler',208,'Literatura','A cidade no interior de Minas Gerais para onde Vanessa se mudou é o tipo de lugar onde anunciam os horários do cinema e os obituários com o mesmo carro de som. Nada de muito interessante acontece por lá, a não ser para Binho, que, segundo ele mesmo, tem várias namoradas e conhece um monte de cantores sertanejos famosos.\r\nA verdade é que Binho é um mentiroso contumaz e agora passou dos limites: inventou que tem uma capivara de estimação. Cansados das histórias cada vez mais mirabolantes do garoto, Vanessa se junta aos amigos ― Léo, Nick e Zé Luís ― para desmascará-lo. E eles estão decididos a ir até as últimas consequências.\r\nNarrado durante as doze horas de uma noite regada a álcool, salgadinhos, segredos e romances mal resolvidos, Enfim, capivaras explora, através de diferentes pontos de vista, os relacionamentos entre um grupo de adolescentes em busca de uma capivara ― ou muito mais do que isso.','1ª',2019,'https://m.media-amazon.com/images/I/71Go9GXctkL._SY466_.jpg',1),(4,857657313,'Duna: livro 1','Frank Herbert',680,'Ficção Científica','Uma estonteante mistura de aventura e misticismo, ecologia e política, este romance ganhador dos prêmios Hugo e Nebula deu início a uma das mais épicas histórias de toda a ficção científica. Duna é um triunfo da imaginação, que influenciará a literatura para sempre.Esta edição inédita, com introdução de Neil Gaiman, apresenta ao leitor o universo fantástico criado por Herbert e que será adaptado ao cinema por Denis Villeneuve, diretor de A chegada e de Blade Runner 2049.','2ª',2017,'https://m.media-amazon.com/images/I/81zN7udGRUL._SL1500_.jpg',2),(5,9786555352955,'SOMBRA E OSSOS: VOLUME 1 DA TRILOGIA SOMBRA E OSSOS','Leigh Bardugo',350,'literatura fantástica','O clássico do Universo YA em uma nova edição\r\nEm um país dividido pela Dobra das Sombras – uma faixa de terra povoada por monstros sombrios – e no qual a corte real está repleta de pessoas com poderes mágicos, Alina Starkov pode se considerar uma garota comum. Seus dias consistem em trabalhar como cartógrafa no Exército e em tentar esconder de seu melhor amigo, Maly, o que sente por ele.\r\nQuando Maly é gravemente ferido por um dos monstros que vivem na Dobra, Alina, desesperada, descobre que é muito mais forte do que pensava: ela é consegue invocar o poder da luz, a única coisa capaz de acabar com a Dobra das Sombras e reunificar Ravka de uma vez por todas.\r\nPor conta disso, Alina é enviada ao Palácio para ser treinada como parte de um grupo de guerreiros com habilidades extraordinárias, os Grishas. Sob os cuidados do Darkling, o Grisha mais poderoso de todos, Alina terá que aprender a lidar com seus novos poderes, navegar pelas perigosas intrigas da corte e sobreviver a ameaças vindas de todos os lados.','1ª',2021,'seo.jpg',2);
 /*!40000 ALTER TABLE `livros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,7 +105,7 @@ CREATE TABLE `log` (
   `data_acesso` datetime NOT NULL,
   `tipo_2fa` varchar(20) NOT NULL,
   PRIMARY KEY (`id_log`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,7 +114,7 @@ CREATE TABLE `log` (
 
 LOCK TABLES `log` WRITE;
 /*!40000 ALTER TABLE `log` DISABLE KEYS */;
-INSERT INTO `log` VALUES (1,4,'2025-11-24 00:52:38','nomeM'),(2,4,'2025-11-24 00:53:00','nomeM'),(3,4,'2025-11-24 01:08:30','nomeM'),(4,4,'2025-11-24 01:09:32','nomeM'),(5,4,'2025-11-24 01:09:34','nomeM'),(6,4,'2025-11-24 01:09:37','nomeM'),(7,4,'2025-11-25 14:51:13','cpf'),(8,4,'2025-11-25 14:51:37','cpf'),(9,4,'2025-11-25 14:52:08','cpf'),(10,4,'2025-11-25 14:52:12','cpf');
+INSERT INTO `log` VALUES (1,2,'2025-11-25 21:47:26','nomeM'),(2,2,'2025-11-25 21:51:53','nomeM'),(3,2,'2025-11-25 21:54:08','nomeM'),(4,2,'2025-11-25 21:57:46','nomeM'),(5,2,'2025-11-25 21:58:14','nomeM'),(6,2,'2025-11-25 22:01:46','nomeM'),(7,2,'2025-11-25 22:01:50','nomeM'),(8,2,'2025-11-25 22:06:22','nomeM'),(9,2,'2025-11-25 22:24:38','nomeM'),(10,2,'2025-11-25 22:24:38','nomeM'),(11,1,'2025-11-25 22:24:51','cpf'),(12,1,'2025-11-25 22:24:52','cpf'),(13,1,'2025-11-25 22:27:34','cpf'),(14,1,'2025-11-25 22:27:37','cpf'),(15,1,'2025-11-25 22:30:58','cep'),(16,1,'2025-11-25 22:31:26','cep'),(17,2,'2025-11-25 22:42:20','cep'),(18,1,'2025-11-25 22:43:28','nomeM'),(19,1,'2025-11-25 22:49:29','nomeM'),(20,1,'2025-11-25 22:50:33','nomeM'),(21,1,'2025-11-25 22:51:25','nomeM'),(22,1,'2025-11-25 22:51:32','nomeM'),(23,1,'2025-11-25 22:51:34','nomeM');
 /*!40000 ALTER TABLE `log` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -126,4 +127,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-25 14:55:04
+-- Dump completed on 2025-11-25 22:56:30
