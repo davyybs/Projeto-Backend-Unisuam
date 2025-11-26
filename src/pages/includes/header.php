@@ -8,8 +8,8 @@
     </a>
 
     <!-- Botão Mobile -->
-    <button class="btn btn-secondary d-lg-none" 
-      type="button" 
+    <button class="btn btn-secondary d-lg-none"
+      type="button"
       data-bs-toggle="collapse"
       data-bs-target="#mobileMenu"
       aria-controls="mobileMenu"
@@ -76,10 +76,11 @@
       <?php 
         } else {
       ?>
-        <div class="user-panel-trigger" onclick="togglePanel()">
+        <!-- Botão Desktop -->
+        <div class="user-panel-trigger" onclick="togglePanel('desktop')">
           <img src="/Projeto-Backend-Unisuam/src/images/userImg.png" class="user-icon">
         </div>
-        <div class="overlay-user" id="overlay" onclick="closePanel()"></div>
+        <div class="overlay-user" id="overlay-desktop" onclick="closePanel('desktop')"></div>
         <?php 
           $userID = $_SESSION['usuario_id'];
           $sql = "SELECT * FROM cadastrou WHERE id = '$userID'";
@@ -88,11 +89,11 @@
           if (mysqli_num_rows($query) > 0) {
             foreach ($query as $usuario) {
         ?>
-        <!-- Painel do Usuário -->
-        <div class="user-panel" id="userPanel">
+        <!-- Painel do Usuário Desktop -->
+        <div class="user-panel" id="userPanel-desktop">
           <div class="panel-header d-flex align-items-center justify-content-between">
             <div class="user-email"><?= $usuario['email'] ?></div>
-            <button class="close-panel" onclick="closePanel()"><i class="bi bi-x"></i></button>
+            <button class="close-panel" onclick="closePanel('desktop')"><i class="bi bi-x"></i></button>
           </div>
 
           <div class="text-center">
@@ -159,14 +160,13 @@
       <?php 
         } else {
       ?>
-
-        <!-- Botão para abrir o painel -->
-        <div class="user-panel-trigger" onclick="togglePanel()">
+        <!-- Botão Mobile -->
+        <div class="user-panel-trigger" onclick="togglePanel('mobile')">
           <img src="/Projeto-Backend-Unisuam/src/images/userImg.png" class="user-icon">
         </div>
 
-        <!-- Overlay -->
-        <div class="overlay-user" id="overlay" onclick="closePanel()"></div>
+        <!-- Overlay Mobile -->
+        <div class="overlay-user" id="overlay-mobile" onclick="closePanel('mobile')"></div>
         <?php 
           $userID = $_SESSION['usuario_id'];
           $sql = "SELECT * FROM cadastrou WHERE id = '$userID'";
@@ -175,11 +175,11 @@
           if (mysqli_num_rows($query) > 0) {
             foreach ($query as $usuario) {
         ?>
-        <!-- Painel do Usuário -->
-        <div class="user-panel" id="userPanel">
-          <div class="panel-header">
-            <button class="close-panel" onclick="closePanel()">×</button>
+        <!-- Painel do Usuário Mobile -->
+        <div class="user-panel" id="userPanel-mobile">
+          <div class="panel-header d-flex align-items-center justify-content-between">
             <div class="user-email"><?= $usuario['email'] ?></div>
+            <button class="close-panel" onclick="closePanel('mobile')"><i class="bi bi-x"></i></button>
           </div>
 
           <div class="text-center">

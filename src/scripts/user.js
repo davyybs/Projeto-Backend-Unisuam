@@ -1,22 +1,23 @@
-function togglePanel() {
-  const panel = document.getElementById('userPanel');
-  const overlay = document.getElementById('overlay');
-  
+function togglePanel(type) {
+  const panel = document.getElementById('userPanel-' + type);
+  const overlay = document.getElementById('overlay-' + type);
+
   panel.classList.toggle('show');
   overlay.classList.toggle('show');
 }
 
-function closePanel() {
-  const panel = document.getElementById('userPanel');
-  const overlay = document.getElementById('overlay');
-  
+function closePanel(type) {
+  const panel = document.getElementById('userPanel-' + type);
+  const overlay = document.getElementById('overlay-' + type);
+
   panel.classList.remove('show');
   overlay.classList.remove('show');
 }
 
-// Fechar ao pressionar ESC
+// Fechar ao pressionar ESC (fecha ambos)
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
-    closePanel();
+    closePanel('desktop');
+    closePanel('mobile');
   }
 });
