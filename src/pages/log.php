@@ -102,7 +102,7 @@
                   <?php 
                       }
                     } else {
-                      echo '<td colspan="4">Nenhum usuário foi encontrado</td>';
+                      echo '<td colspan="4" class="text-center py-3 text-muted">Nenhum usuário foi encontrado</td>';
                     }
                   ?>
                 </tbody>
