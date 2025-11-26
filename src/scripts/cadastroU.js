@@ -12,11 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (celularInput) {
-    celularInput.addEventListener('input', () => {
-      formatarTelefone(celularInput);
-    });
-  }
+ 
 
   if (form) {
     form.addEventListener('submit', validarFormulario);
@@ -87,14 +83,29 @@ function validarCpf() {
 function formatarTelefone(input) {
   let tel = input.value.replace(/\D/g, '');
 
-  if (!tel.startsWith('55')) tel = '55' + tel;
+  
+  if (!tel.startsWith('55')) tel = "55" + tel;
 
-  if (tel.length > 2) {
-    let ddd = tel.slice(2, 4);
-    let numero = tel.slice(4);
-    input.value = `(+55)${ddd}-${numero}`;
+  
+  tel = tel.substring(0, 13);
+
+  const ddi = tel.substring(0, 2);     
+  const ddd = tel.substring(2, 4);     
+  const numero = tel.substring(4);    
+
+  if (tel.length <= 4) {
+    input.value = `(+${ddi})${ddd}`;
+    return;
   }
+
+  if (numero.length <= 5) {
+    input.value = `(+${ddi})${ddd}-${numero}`;
+    return;
+  }
+
+  input.value = `(+${ddi})${ddd}-${numero.substring(0,5)}-${numero.substring(5)}`;
 }
+
 
 function buscarEndereco() {
   const cep = document.getElementById('cep').value.replace(/\D/g, '');
