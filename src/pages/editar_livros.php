@@ -47,7 +47,7 @@
 
         <h2 class="fw-semibold mb-4">Editar Livro</h2>
 
-        <form action="salvar_edicao.php" method="POST" enctype="multipart/form-data" class="row g-3">
+        <form action="../actions/salvar_edicao.php" method="POST" enctype="multipart/form-data" class="row g-3">
 
             <!-- ID Oculto -->
             <input type="hidden" name="id" value="<?= $livro['id'] ?>">

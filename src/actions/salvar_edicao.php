@@ -56,9 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             WHERE id = $id";
 
     if (mysqli_query($conexao, $sql)) {
-        header("Location: editar_livros.php?msg=ok");
+        header("Location: ../pages/visualizar_livros.php?msg=ok");
         exit;
     } else {
         echo "Erro ao salvar: " . mysqli_error($conexao);
     }
+
 }
+?>
