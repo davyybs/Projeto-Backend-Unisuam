@@ -3,21 +3,57 @@ document.addEventListener('DOMContentLoaded', () => {
   const cpfInput = document.getElementById('cpf');
   const celularInput = document.getElementById('celular');
 
+
+  const loginInput = document.getElementById('login') || document.querySelector('input[name="login"]');
+  const senhaInput = document.getElementById('senha') || document.querySelector('input[name="senha"]');
+
   if (cpfInput) {
     cpfInput.addEventListener('input', () => {
       aplicarMascaraCPF(cpfInput);
-       const erroElement = document.getElementById('cpfErro');
-    if (erroElement) erroElement.style.display = 'none';
+      const erroElement = document.getElementById('cpfErro');
+      if (erroElement) erroElement.style.display = 'none';
       cpfInput.setCustomValidity('');
     });
   }
 
- 
+  
+  if (loginInput) {
+  
+    loginInput.setAttribute('pattern', '[A-Za-z]{6}');
+    loginInput.setAttribute('minlength', '6');
+    loginInput.setAttribute('maxlength', '6');
+    loginInput.setAttribute('inputmode', 'text');
+
+   
+    loginInput.addEventListener('input', () => {
+      const cleaned = loginInput.value.replace(/[^A-Za-z]/g, '').slice(0, 6);
+      if (loginInput.value !== cleaned) loginInput.value = cleaned;
+     
+      if (cleaned.length === 6) loginInput.setCustomValidity('');
+      else loginInput.setCustomValidity('usuario deve ter exatamente 6 letras.');
+    });
+  }
+
+
+  if (senhaInput) {
+    senhaInput.setAttribute('pattern', '[A-Za-z]{8}');
+    senhaInput.setAttribute('minlength', '8');
+    senhaInput.setAttribute('maxlength', '8');
+    senhaInput.setAttribute('inputmode', 'text');
+
+    senhaInput.addEventListener('input', () => {
+      const cleaned = senhaInput.value.replace(/[^A-Za-z]/g, '').slice(0, 8);
+      if (senhaInput.value !== cleaned) senhaInput.value = cleaned;
+      if (cleaned.length === 8) senhaInput.setCustomValidity('');
+      else senhaInput.setCustomValidity('Senha deve ter exatamente 8 letras.');
+    });
+  }
 
   if (form) {
     form.addEventListener('submit', validarFormulario);
   }
 
+ 
   document.getElementById('senha')?.addEventListener('input', validarSenha);
   document.getElementById('confirma_senha')?.addEventListener('input', () => {
     const senha = document.getElementById('senha').value;
@@ -27,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
 
 function aplicarMascaraCPF(input) {
   let cpf = input.value.replace(/\D/g, '');
@@ -83,15 +121,13 @@ function validarCpf() {
 function formatarTelefone(input) {
   let tel = input.value.replace(/\D/g, '');
 
-  
   if (!tel.startsWith('55')) tel = "55" + tel;
 
-  
   tel = tel.substring(0, 13);
 
-  const ddi = tel.substring(0, 2);     
-  const ddd = tel.substring(2, 4);     
-  const numero = tel.substring(4);    
+  const ddi = tel.substring(0, 2);
+  const ddd = tel.substring(2, 4);
+  const numero = tel.substring(4);
 
   if (tel.length <= 4) {
     input.value = `(+${ddi})${ddd}`;
@@ -105,7 +141,6 @@ function formatarTelefone(input) {
 
   input.value = `(+${ddi})${ddd}-${numero.substring(0,5)}-${numero.substring(5)}`;
 }
-
 
 function buscarEndereco() {
   const cep = document.getElementById('cep').value.replace(/\D/g, '');
@@ -153,10 +188,10 @@ function validarSenha() {
   const senhaN = document.getElementById('senhaN');
   const especial = document.getElementById('especial');
 
-  min.style.color = senha.length >= 8 ? 'green' : 'red';
-  letras.style.color = /[A-Za-z]/.test(senha) ? 'green' : 'red';
-  senhaN.style.color = /\d/.test(senha) ? 'green' : 'red';
-  especial.style.color = /[\W_]/.test(senha) ? 'green' : 'red';
+  if (min) min.style.color = senha.length >= 8 ? 'green' : 'red';
+  if (letras) letras.style.color = /[A-Za-z]/.test(senha) ? 'green' : 'red';
+  if (senhaN) senhaN.style.color = /\d/.test(senha) ? 'green' : 'red';
+  if (especial) especial.style.color = /[\W_]/.test(senha) ? 'green' : 'red';
 }
 
 function confirmarSenha() {
@@ -171,6 +206,32 @@ function confirmarSenha() {
   }
 }
 
+function validarUsuario() {
+  const el = document.getElementById('usuario') || document.querySelector('input[name="usuario"]');
+  if (!el) return true; 
+  const usuario = el.value;
+  const regex = /^[A-Za-z]{6}$/;
+  if (!regex.test(usuario)) {
+    el.setCustomValidity('Usuario inválido. Deve ter exatamente 6 letras.');
+    return false;
+  }
+  el.setCustomValidity('');
+  return true;
+}
+
+function validarSenhaAlfabetica() {
+  const el = document.getElementById('senha') || document.querySelector('input[name="senha"]');
+  if (!el) return true;
+  const senha = el.value;
+  const regex = /^[A-Za-z]{8}$/;
+  if (!regex.test(senha)) {
+    el.setCustomValidity('Senha inválida. Deve ter exatamente 8 letras.');
+    return false;
+  }
+  el.setCustomValidity('');
+  return true;
+}
+
 function validarFormulario(event) {
   event.preventDefault();
 
@@ -179,16 +240,29 @@ function validarFormulario(event) {
   const camposObrigatorios = [
     'nome', 'data_nasc', 'sexo', 'nomeM', 'cpf', 'email',
     'celular', 'cep', 'rua', 'numero', 'bairro', 'cidade',
-    'estado', 'login', 'senha', 'confirma_senha'
+    'estado', 'usuario', 'senha', 'confirma_senha'
   ];
 
   for (const id of camposObrigatorios) {
     const campo = document.getElementById(id);
     if (!campo || !campo.value.trim()) {
-      alert(`Por favor, preencha o campo "${campo.previousElementSibling.textContent}" corretamente.`);
-      campo.focus();
+      alert(`Por favor, preencha o campo "${campo ? campo.previousElementSibling?.textContent : id}" corretamente.`);
+      if (campo) campo.focus();
       return false;
     }
+  }
+
+  
+  if (!validarUsuario()) {
+    const el = document.getElementById('usuario') || document.querySelector('input[name="usuario"]');
+    if (el) el.focus();
+    return false;
+  }
+
+  if (!validarSenhaAlfabetica()) {
+    const el = document.getElementById('senha') || document.querySelector('input[name="senha"]');
+    if (el) el.focus();
+    return false;
   }
 
   if (!validarCpf()) {
@@ -210,3 +284,8 @@ function validarFormulario(event) {
 
   form.submit();
 }
+
+setTimeout(() => {
+  document.getElementById("msg1").style.display = "none";
+  document.getElementById("msg2").style.display = "none";
+}, 3000);
