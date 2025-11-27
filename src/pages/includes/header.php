@@ -122,10 +122,24 @@
   <div class="collapse d-lg-none mt-2" id="mobileMenu">
 
     <ul class="nav flex-column text-center mb-2">
-      <li><a href="/Projeto-Backend-Unisuam/index.php" class="nav-link text-white">Home</a></li>
-      <li><a href="/Projeto-Backend-Unisuam/src/pages/modeloBD.php" class="nav-link text-white">Modelo de BD</a></li>
-      <li><a href="/Projeto-Backend-Unisuam/src/pages/log.php" class="nav-link text-white">Registros de Usuário</a></li>
-      <li><a href="/Projeto-Backend-Unisuam/src/pages/consulta_usuario.php" class="nav-link text-white">Consulta de Usuário</a></li>
+      <li><a href="/Projeto-Backend-Unisuam/src/pages/modeloBD.php" class="nav-link text-white">Modelo Conceitual</a></li>
+      <li><a href="/Projeto-Backend-Unisuam/src/pages/visualizar_livros.php" class="nav-link text-white">Visualizar Livros</a></li>
+      <?php 
+        if (isset($_SESSION['usuario_id'])) {
+          $idUsuario = $_SESSION['usuario_id'];
+          $sql = "SELECT tipo_usuario FROM cadastrou WHERE id = '$idUsuario'";
+          $query = mysqli_query($conexao, $sql);
+          $tipo_usuario = mysqli_fetch_assoc($query);
+
+          if ($tipo_usuario['tipo_usuario'] == 'admin') {
+      ?>      
+        <li><a href="/Projeto-Backend-Unisuam/src/pages/cadastro_livro.php" class="nav-link px-2 text-white">Cadastro de Livros</a></li>
+        <li><a href="/Projeto-Backend-Unisuam/src/pages/log.php" class="nav-link px-2 text-white">Registros de Usuário</a></li>
+        <li><a href="/Projeto-Backend-Unisuam/src/pages/consulta_usuario.php" class="nav-link px-2 text-white">Consulta de Usuário</a></li>
+      <?php
+          } 
+        }
+      ?>
     </ul>
 
     <!-- Mobile: Fonte e Dark Mode -->
@@ -151,10 +165,10 @@
     <?php 
       if (!isset($_SESSION['usuario_id'])) {
     ?>
-      <div class="text-end">
+      <div class="text-center mb-2">
         <a href="/Projeto-Backend-Unisuam/src/pages/login.php" class="btn btn-outline-light me-2 text-decoration-none">Login</a>
       </div>
-      <div class="text-end">
+      <div class="text-center mb-2">
         <a href="/Projeto-Backend-Unisuam/src/pages/cadastro_usuario.php" class="btn btn-primary me-2 text-decoration-none">Cadastre-se</a>
       </div>
       <?php 
