@@ -40,3 +40,20 @@ button {
 img {
   width: 97%;
 }
+
+.blur-div {
+  width: 100%;
+  height: 100%;
+  background-color: #00000080;
+  filter: blur(8px);
+  z-index: 9999;
+}
+
+.divMsg {
+  width: 100%;
+  height: 100%;
+}
+
+.alert {
+  z-index: 999999;
+}

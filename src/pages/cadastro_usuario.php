@@ -144,7 +144,8 @@ $dados = [
   <main class="container d-flex justify-content-center align-items-center h-100 p-4 my-4">
 
     <?php if($erro): ?>
-    <div class="alert alert-danger position-absolute"><?php echo $erro; ?></div>
+    <div class="blur-div position-absolute" id="msg1"></div>
+    <div class="alert alert-danger position-absolute" id="msg2"><?php echo $erro; ?></div>
     <?php endif; ?>
 
     <div class="cadArea shadow p-5">

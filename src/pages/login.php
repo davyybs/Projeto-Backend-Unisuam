@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/login.css">
   <link rel="stylesheet" href="../css/responsividade.css">
   <script src="../scripts/fonte.js" defer></script>
-    <script src="../scripts/darkmode.js" defer></script>
+  <script src="../scripts/darkmode.js" defer></script>
   <title>Login</title>
 </head>
 
@@ -36,11 +36,7 @@
             $_SESSION['usuario_id'] = $usuario['id'];
             header("Location: 2fa.php");
             exit;
-          } else {
-            echo "<p>Senha incorreta</p>";
           }
-        } else {
-          echo "<p>Usuário não encontrado</p>";
         }
       }
     ?>
@@ -67,6 +63,15 @@
               </span>
               <input type="password" name="password" id="password" required class="form-control bg-body text-body">
             </div>
+            <?php 
+              if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                if (mysqli_num_rows($resultado) == 0) {
+                  echo '<p class="text-danger mb-0 mt-1">Usuário não encontrado</p>';
+                } elseif (password_verify($senha, $usuario['senha'] == false)) {
+                  echo '<p class="text-danger mb-0 mt-1">Senha incorreta</p>';
+                }
+              }
+            ?>
           </div>
           <div>
             <button type="submit" class="btn btn-primary fw-semibold">Enviar</button>
