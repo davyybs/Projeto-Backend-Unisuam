@@ -88,8 +88,12 @@
 
                         $query = mysqli_query($conexao, $sqlNome);
                         $nomeUser = mysqli_fetch_assoc($query);
-
-                        echo $nomeUser['nome'];
+                        
+                        if (empty($nomeUser['nome'])) {
+                          echo 'Usuário deletado';
+                        } else {
+                          echo $nomeUser['nome'];
+                        }
                       ?>
                     </td>
                     <td><?= $registro['data_acesso']?></td>
