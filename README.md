@@ -1,6 +1,4 @@
-# Projeto-Backend-Unisuam
-
-Sistema de Gerenciamento de Biblioteca | Projeto de Back-end
+# Sistema de Gerenciamento de Biblioteca | Projeto de Back-end
 
 📖 Sobre o Projeto
 
